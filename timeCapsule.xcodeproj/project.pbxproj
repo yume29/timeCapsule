@@ -7,15 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DA1F497E948984F31D7CF69 /* Pods_timeCapsule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD96F6C072B1D45E8F305E93 /* Pods_timeCapsule.framework */; };
+		90263E7421C77C2000D01110 /* picsSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90263E7321C77C2000D01110 /* picsSaveViewController.swift */; };
 		9051F17921C375F4006BA062 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051F17821C375F4006BA062 /* AppDelegate.swift */; };
 		9051F17B21C375F4006BA062 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051F17A21C375F4006BA062 /* ViewController.swift */; };
 		9051F17E21C375F4006BA062 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9051F17C21C375F4006BA062 /* Main.storyboard */; };
 		9051F18121C375F4006BA062 /* timeCapsule.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9051F17F21C375F4006BA062 /* timeCapsule.xcdatamodeld */; };
 		9051F18321C375FC006BA062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9051F18221C375FC006BA062 /* Assets.xcassets */; };
 		9051F18621C375FC006BA062 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9051F18421C375FC006BA062 /* LaunchScreen.storyboard */; };
+		9051F18E21C3778B006BA062 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051F18D21C3778B006BA062 /* UIColorHex.swift */; };
+		9051F19021C37B74006BA062 /* time capsule btn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9051F18F21C37B74006BA062 /* time capsule btn.jpg */; };
+		9051F19221C37B84006BA062 /* reminder btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9051F19121C37B84006BA062 /* reminder btn.png */; };
+		9051F1BF21C4C774006BA062 /* Share app.png in Resources */ = {isa = PBXBuildFile; fileRef = 9051F1BE21C4C774006BA062 /* Share app.png */; };
+		9051F1C321C4CD24006BA062 /* Time capsule.png in Resources */ = {isa = PBXBuildFile; fileRef = 9051F1C221C4CD24006BA062 /* Time capsule.png */; };
+		90AE467C21C8DDD500731FF1 /* photoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AE467B21C8DDD500731FF1 /* photoViewController.swift */; };
+		90AE468021CA082600731FF1 /* navcolor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 90AE467F21CA082500731FF1 /* navcolor.jpg */; };
+		90CD3DAD21CA3D71003A7422 /* library.png in Resources */ = {isa = PBXBuildFile; fileRef = 90CD3DAC21CA3D70003A7422 /* library.png */; };
+		90D7C09D21CB5CAC006C6C09 /* voiceSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D7C09C21CB5CAC006C6C09 /* voiceSaveViewController.swift */; };
+		90D7C09F21CB6474006C6C09 /* OK btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D7C09E21CB6473006C6C09 /* OK btn.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09A04D3B044E90FBFAD9859A /* Pods-timeCapsule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timeCapsule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-timeCapsule/Pods-timeCapsule.debug.xcconfig"; sourceTree = "<group>"; };
+		3C0B120D01526C5E116AFC90 /* Pods-timeCapsule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timeCapsule.release.xcconfig"; path = "Pods/Target Support Files/Pods-timeCapsule/Pods-timeCapsule.release.xcconfig"; sourceTree = "<group>"; };
+		90263E7321C77C2000D01110 /* picsSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = picsSaveViewController.swift; sourceTree = "<group>"; };
 		9051F17521C375F4006BA062 /* timeCapsule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timeCapsule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9051F17821C375F4006BA062 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9051F17A21C375F4006BA062 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +39,17 @@
 		9051F18221C375FC006BA062 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9051F18521C375FC006BA062 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9051F18721C375FC006BA062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9051F18D21C3778B006BA062 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
+		9051F18F21C37B74006BA062 /* time capsule btn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "time capsule btn.jpg"; sourceTree = "<group>"; };
+		9051F19121C37B84006BA062 /* reminder btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reminder btn.png"; sourceTree = "<group>"; };
+		9051F1BE21C4C774006BA062 /* Share app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share app.png"; sourceTree = "<group>"; };
+		9051F1C221C4CD24006BA062 /* Time capsule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Time capsule.png"; sourceTree = "<group>"; };
+		90AE467B21C8DDD500731FF1 /* photoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoViewController.swift; sourceTree = "<group>"; };
+		90AE467F21CA082500731FF1 /* navcolor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = navcolor.jpg; sourceTree = "<group>"; };
+		90CD3DAC21CA3D70003A7422 /* library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = library.png; path = ../../../Desktop/library.png; sourceTree = "<group>"; };
+		90D7C09C21CB5CAC006C6C09 /* voiceSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voiceSaveViewController.swift; sourceTree = "<group>"; };
+		90D7C09E21CB6473006C6C09 /* OK btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OK btn.png"; sourceTree = "<group>"; };
+		AD96F6C072B1D45E8F305E93 /* Pods_timeCapsule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_timeCapsule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA1F497E948984F31D7CF69 /* Pods_timeCapsule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +69,15 @@
 			children = (
 				9051F17721C375F4006BA062 /* timeCapsule */,
 				9051F17621C375F4006BA062 /* Products */,
+				90AE467F21CA082500731FF1 /* navcolor.jpg */,
+				90CD3DAC21CA3D70003A7422 /* library.png */,
+				9051F18F21C37B74006BA062 /* time capsule btn.jpg */,
+				90D7C09E21CB6473006C6C09 /* OK btn.png */,
+				9051F19121C37B84006BA062 /* reminder btn.png */,
+				9051F1BE21C4C774006BA062 /* Share app.png */,
+				9051F1C221C4CD24006BA062 /* Time capsule.png */,
+				F695FDA1F0D89739D3438C93 /* Pods */,
+				DE26D9CC42CB69D8B6032259 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +94,34 @@
 			children = (
 				9051F17821C375F4006BA062 /* AppDelegate.swift */,
 				9051F17A21C375F4006BA062 /* ViewController.swift */,
+				90D7C09C21CB5CAC006C6C09 /* voiceSaveViewController.swift */,
 				9051F17C21C375F4006BA062 /* Main.storyboard */,
 				9051F18221C375FC006BA062 /* Assets.xcassets */,
 				9051F18421C375FC006BA062 /* LaunchScreen.storyboard */,
 				9051F18721C375FC006BA062 /* Info.plist */,
 				9051F17F21C375F4006BA062 /* timeCapsule.xcdatamodeld */,
+				9051F18D21C3778B006BA062 /* UIColorHex.swift */,
+				90AE467B21C8DDD500731FF1 /* photoViewController.swift */,
+				90263E7321C77C2000D01110 /* picsSaveViewController.swift */,
 			);
 			path = timeCapsule;
+			sourceTree = "<group>";
+		};
+		DE26D9CC42CB69D8B6032259 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD96F6C072B1D45E8F305E93 /* Pods_timeCapsule.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F695FDA1F0D89739D3438C93 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				09A04D3B044E90FBFAD9859A /* Pods-timeCapsule.debug.xcconfig */,
+				3C0B120D01526C5E116AFC90 /* Pods-timeCapsule.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9051F18A21C375FC006BA062 /* Build configuration list for PBXNativeTarget "timeCapsule" */;
 			buildPhases = (
+				29B36CADF2791BE732A6B05A /* [CP] Check Pods Manifest.lock */,
 				9051F17121C375F4006BA062 /* Sources */,
 				9051F17221C375F4006BA062 /* Frameworks */,
 				9051F17321C375F4006BA062 /* Resources */,
+				FB462DF218CFD05D3F78EAEC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -109,6 +168,24 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				de,
+				ur,
+				ar,
+				ja,
+				"nb-NO",
+				es,
+				pt_BR,
+				da,
+				it,
+				ko,
+				"zh-Hant",
+				hu,
+				tr,
+				vi,
+				ru,
+				fr,
+				nl,
 			);
 			mainGroup = 9051F16C21C375F4006BA062;
 			productRefGroup = 9051F17621C375F4006BA062 /* Products */;
@@ -126,21 +203,83 @@
 			buildActionMask = 2147483647;
 			files = (
 				9051F18621C375FC006BA062 /* LaunchScreen.storyboard in Resources */,
+				9051F1C321C4CD24006BA062 /* Time capsule.png in Resources */,
+				9051F19221C37B84006BA062 /* reminder btn.png in Resources */,
+				9051F1BF21C4C774006BA062 /* Share app.png in Resources */,
 				9051F18321C375FC006BA062 /* Assets.xcassets in Resources */,
+				90CD3DAD21CA3D71003A7422 /* library.png in Resources */,
 				9051F17E21C375F4006BA062 /* Main.storyboard in Resources */,
+				9051F19021C37B74006BA062 /* time capsule btn.jpg in Resources */,
+				90AE468021CA082600731FF1 /* navcolor.jpg in Resources */,
+				90D7C09F21CB6474006C6C09 /* OK btn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29B36CADF2791BE732A6B05A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-timeCapsule-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB462DF218CFD05D3F78EAEC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-timeCapsule/Pods-timeCapsule-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
+				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
+				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-timeCapsule/Pods-timeCapsule-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9051F17121C375F4006BA062 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90D7C09D21CB5CAC006C6C09 /* voiceSaveViewController.swift in Sources */,
 				9051F18121C375F4006BA062 /* timeCapsule.xcdatamodeld in Sources */,
+				90AE467C21C8DDD500731FF1 /* photoViewController.swift in Sources */,
+				9051F18E21C3778B006BA062 /* UIColorHex.swift in Sources */,
 				9051F17B21C375F4006BA062 /* ViewController.swift in Sources */,
 				9051F17921C375F4006BA062 /* AppDelegate.swift in Sources */,
+				90263E7421C77C2000D01110 /* picsSaveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +309,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -231,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -284,6 +425,7 @@
 		};
 		9051F18B21C375FC006BA062 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09A04D3B044E90FBFAD9859A /* Pods-timeCapsule.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -294,7 +436,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yumeichinose.timeCapsule;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "${TARGET_NAME}";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,6 +444,7 @@
 		};
 		9051F18C21C375FC006BA062 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C0B120D01526C5E116AFC90 /* Pods-timeCapsule.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -312,7 +455,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yumeichinose.timeCapsule;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "${TARGET_NAME}";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
