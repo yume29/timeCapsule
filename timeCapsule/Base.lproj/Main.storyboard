@@ -100,12 +100,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3Y-k1-d7r">
-                                <rect key="frame" x="154" y="695" width="106" height="59"/>
+                                <rect key="frame" x="154" y="652" width="106" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="OK btn.png"/>
                                 <connections>
-                                    <action selector="tapNextPage:" destination="EJ2-E2-lmJ" eventType="touchUpInside" id="kva-oy-uyQ"/>
-                                    <segue destination="4Mj-L9-ocJ" kind="show" identifier="showVoiceView" id="kOh-Va-eh2"/>
+                                    <action selector="tapShoeVice:" destination="EJ2-E2-lmJ" eventType="touchUpInside" id="uhO-AI-xKN"/>
+                                    <segue destination="4Mj-L9-ocJ" kind="show" id="o3C-Th-AtK"/>
                                 </connections>
                             </button>
                         </subviews>

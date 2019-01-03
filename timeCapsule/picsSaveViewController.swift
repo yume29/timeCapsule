@@ -134,15 +134,16 @@ class picsSaveViewController: UIViewController, UIImagePickerControllerDelegate,
 
 
 //    OKボタンで次のページへ
-    @IBAction func tapNextPage(_ sender: UIButton) {
-        
-       self.performSegue(withIdentifier: "showVoiceView", sender: nil)
+
+    @IBAction func tapShoeVice(_ sender: UIButton) {
+    print ("OKpush")
+    }
+    //self.performSegue(withIdentifier: "showVoiceView", sender: nil)
 //        let storyboard: UIStoryboard = self.storyboard!
 //        let voice = storyboard.instantiateViewController(withIdentifier: "showVoiceView")
 //        self.present(voice, animated: true, completion: nil)
         
     }
-}
 
 
     /*
