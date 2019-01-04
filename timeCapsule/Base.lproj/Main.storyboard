@@ -157,13 +157,43 @@
                     <view key="view" contentMode="scaleToFill" id="Yhu-3D-i3C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="待機中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icd-F1-MHN">
+                                <rect key="frame" x="184" y="113" width="52" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpv-Ws-F9S">
+                                <rect key="frame" x="29" y="311" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="play" image="playBtn.png"/>
+                                <connections>
+                                    <action selector="play" destination="4Mj-L9-ocJ" eventType="touchUpInside" id="5rV-fQ-Gbn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wD-yi-diA">
+                                <rect key="frame" x="135" y="151" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="record" image="microphone.png"/>
+                                <connections>
+                                    <action selector="record" destination="4Mj-L9-ocJ" eventType="touchUpInside" id="Jkj-Pc-MPz"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Zwu-P3-NrD"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="icd-F1-MHN" id="MRp-k3-K4t"/>
+                        <outlet property="playButton" destination="mpv-Ws-F9S" id="kLh-qs-qMv"/>
+                        <outlet property="recordButton" destination="8wD-yi-diA" id="i8d-XN-Q2I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCK-0F-06P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2988" y="132"/>
+            <point key="canvasLocation" x="2986.9565217391305" y="131.91964285714286"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mpO-qc-BZ2">
@@ -188,6 +218,8 @@
         <image name="OK btn.png" width="395" height="223"/>
         <image name="Share app.png" width="625" height="300"/>
         <image name="library.png" width="294" height="258"/>
+        <image name="microphone.png" width="255" height="256"/>
+        <image name="playBtn.png" width="253" height="252"/>
         <image name="reminder btn.png" width="1024" height="423"/>
         <image name="time capsule btn.jpg" width="1025" height="425"/>
     </resources>
