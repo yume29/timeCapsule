@@ -165,22 +165,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpv-Ws-F9S">
-                                <rect key="frame" x="29" y="311" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="play" image="playBtn.png"/>
-                                <connections>
-                                    <action selector="play" destination="4Mj-L9-ocJ" eventType="touchUpInside" id="5rV-fQ-Gbn"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wD-yi-diA">
                                 <rect key="frame" x="135" y="151" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="record" image="microphone.png"/>
+                                <state key="normal" title="record">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="record" destination="4Mj-L9-ocJ" eventType="touchUpInside" id="Jkj-Pc-MPz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpv-Ws-F9S">
+                                <rect key="frame" x="29" y="311" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="play">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="play" destination="4Mj-L9-ocJ" eventType="touchUpInside" id="5rV-fQ-Gbn"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="715-6x-G6F">
+                                <rect key="frame" x="121" y="316" width="275" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.9321255088" green="0.34722284530000003" blue="0.3040541135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" red="0.9321255088" green="0.34722284530000003" blue="0.3040541135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="slide:" destination="4Mj-L9-ocJ" eventType="valueChanged" id="EBM-2x-OQm"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Zwu-P3-NrD"/>
@@ -189,6 +203,7 @@
                         <outlet property="label" destination="icd-F1-MHN" id="MRp-k3-K4t"/>
                         <outlet property="playButton" destination="mpv-Ws-F9S" id="kLh-qs-qMv"/>
                         <outlet property="recordButton" destination="8wD-yi-diA" id="i8d-XN-Q2I"/>
+                        <outlet property="soundSlider" destination="715-6x-G6F" id="QUU-MC-ry3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCK-0F-06P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -218,8 +233,6 @@
         <image name="OK btn.png" width="395" height="223"/>
         <image name="Share app.png" width="625" height="300"/>
         <image name="library.png" width="294" height="258"/>
-        <image name="microphone.png" width="255" height="256"/>
-        <image name="playBtn.png" width="253" height="252"/>
         <image name="reminder btn.png" width="1024" height="423"/>
         <image name="time capsule btn.jpg" width="1025" height="425"/>
     </resources>

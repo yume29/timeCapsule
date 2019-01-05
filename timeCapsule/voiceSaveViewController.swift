@@ -18,18 +18,31 @@ class voiceSaveViewController: UIViewController,AVAudioRecorderDelegate, AVAudio
     
     @IBOutlet weak var playButton: UIButton!
     
+    @IBOutlet weak var soundSlider: UISlider!
+    
 //    使う変数の宣言
 //    falseはレコードオフの状態
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
     var isRecording = false
     var isPlaying = false
+//    //タイマー変数を定義
+//    var timer = Timer()
+//    //次に再生するか一時停止するかを判断
+//    var playorpause = 0
+//    //曲が再生される前かされた後かを判定
+//    var flag = 0
+//    //曲の現在位置を一次的に保持
+//    var currenttime = 0.0
+//    //曲の長さを保持する変数
+//    var timeinterval = TimeInterval()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+    
         view.backgroundColor = UIColor(hex: "f9f1d3")
+        recordButton.setBackgroundImage(UIImage(named: "microphone.png"), for: .normal)
+        playButton.setBackgroundImage(UIImage(named: "playBtn.png"), for: .normal)
         
         //         影表示用のビュー
         let shadowView = UIView(frame: CGRect(x: 0, y: 0, width: 375, height:  667))
@@ -38,7 +51,15 @@ class voiceSaveViewController: UIViewController,AVAudioRecorderDelegate, AVAudio
         shadowView.layer.shadowOpacity = 0.5
         shadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
         shadowView.layer.shadowRadius = 5
-
+//        影表示用ビューに画像ボタンを乗せる
+        shadowView.addSubview(recordButton)
+        shadowView.addSubview(playButton)
+        
+//        影表示＋画像ボタンのビューを乗せる
+        view.addSubview(shadowView)
+        
+//        スライダーのつまみ
+        soundSlider.setValue(0, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,7 +72,8 @@ class voiceSaveViewController: UIViewController,AVAudioRecorderDelegate, AVAudio
         if !isRecording {
             
             let session = AVAudioSession.sharedInstance()
-            try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, with:.allowBluetoothA2DP)
+//            MARK:　ここのエラーを解決したい
+            try! session.setCategory(.playAndRecord, mode: .default, options:.allowBluetoothA2DP)
             try! session.setActive(true)
             
             let settings = [
@@ -127,14 +149,32 @@ class voiceSaveViewController: UIViewController,AVAudioRecorderDelegate, AVAudio
         let url = docsDirect.appendingPathComponent("recording.m4a")
         return url
     }
-    /*
-    // MARK: - Navigation
+    
+//    @IBAction func sliderplay(_ sender: Any) {
+//        var url = URL(fileURLWithPath: Bundle.main.path(forResource: "recording.m4a", ofType: nil)!)
+//        var error: Error?
+//        do {
+//            audioPlayer = try AVAudioPlayer(contentsOf: url)
+//        }
+//        catch let error {
+//        }
+//        if audioPlayer == nil {
+//            print("Error: \(error)")
+//        }
+//        audioPlayer.prepareToPlay()
+//        soundSlider.maximumValue = Float(audioPlayer.duration)
+//        soundSlider.value = 0.0
+//        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
+//        audioPlayer.play()
+//    }
+//
+//    @objc func updateTime(_ timer: Timer) {
+//        soundSlider.value = Float(audioPlayer.currentTime)
+//    }
+//
+//    @IBAction func slide(_ slider: UISlider) {
+//        audioPlayer.currentTime = TimeInterval(slider.value)
+//    }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
