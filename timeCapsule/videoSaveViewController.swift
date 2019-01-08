@@ -71,8 +71,7 @@ class videoSaveViewController: UIViewController,UIImagePickerControllerDelegate,
     @IBAction func openLibrary(_ sender: Any) {
         let picker = YPImagePicker()
         picker.didFinishPicking { [unowned picker] items, cancelled in
-//            config.screens = [.library, .video]
-//            config.library.mediaType = .video
+
 
                 if let video = items.singleVideo {
                     print(video.fromCamera)
@@ -115,17 +114,23 @@ class videoSaveViewController: UIViewController,UIImagePickerControllerDelegate,
         
         //保存するビデオについての管理
         config.video.fileType = .mov
-        config.video.recordingTimeLimit = 60.0
-        config.video.libraryTimeLimit = 60.0
+//        config.video.recordingTimeLimit = 60.0
+        config.video.libraryTimeLimit = 300.0
         config.video.minimumTimeLimit = 3.0
-        config.video.trimmerMaxDuration = 60.0
+        config.video.trimmerMaxDuration = 300.0
         config.video.trimmerMinDuration = 3.0
+        //開いたときに録画画面になる
+        //   config.screens = [.library, .video]
+
+        //開いたときにゔ動画のわライブラリだけだす
+        config.library.mediaType = .video
         //正方形以外もそのまま表示
         config.onlySquareImagesFromCamera = false
-        //ライブラリの写真を表示する際、1行に何枚写真を並べるか。
-        config.library.numberOfItemsInRow = 4
         //どのスクリーンを最初に表示するか。
         config.startOnScreen = .video
+        //ライブラリの写真を表示する際、1行に何枚写真を並べるか。
+        config.library.numberOfItemsInRow = 4
+
         //ステータスバーを隠すかどうか
         config.hidesStatusBar = false
         //写真はカメラロールに保存されない
@@ -140,8 +145,10 @@ class videoSaveViewController: UIViewController,UIImagePickerControllerDelegate,
         
         //選べる写真の数
         config.library.maxNumberOfItems = 20
-//        //上記設定
-//        YPImagePickerConfiguration.shared = config
+        //上記設定
+        YPImagePickerConfiguration.shared = config
+        
+
         
     }
     

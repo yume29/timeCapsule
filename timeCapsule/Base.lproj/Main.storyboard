@@ -62,8 +62,8 @@
         <!--Pics Save View Controller-->
         <scene sceneID="He7-yC-8j0">
             <objects>
-                <viewController id="EJ2-E2-lmJ" customClass="picsSaveViewController" customModule="timeCapsule" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SUL-At-AT1">
+                <viewController storyboardIdentifier="picsSaveViewController" id="EJ2-E2-lmJ" customClass="picsSaveViewController" customModule="timeCapsule" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="picsSaveViewController" id="SUL-At-AT1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -96,7 +96,7 @@
                                     <color key="titleColor" red="0.9321255088" green="0.34722284530000003" blue="0.3040541135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="openLibrary:" destination="EJ2-E2-lmJ" eventType="touchUpInside" id="5wt-Xo-hWy"/>
+                                    <action selector="openLibrary:" destination="EJ2-E2-lmJ" eventType="touchUpInside" id="ghP-ha-xXO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3Y-k1-d7r">
@@ -104,7 +104,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="OK btn.png"/>
                                 <connections>
-                                    <action selector="tapShoeVice:" destination="EJ2-E2-lmJ" eventType="touchUpInside" id="uhO-AI-xKN"/>
+                                    <action selector="tapShoeVice:" destination="EJ2-E2-lmJ" eventType="touchUpInside" id="bdU-Sg-ee8"/>
                                     <segue destination="4Mj-L9-ocJ" kind="show" id="o3C-Th-AtK"/>
                                 </connections>
                             </button>
@@ -116,11 +116,9 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="explainLabel" destination="Thg-Xv-cVI" id="GNA-or-RR4"/>
                         <outlet property="libraryBtn" destination="xJ1-2f-cU4" id="tPQ-Nd-rLZ"/>
                         <outlet property="okBtn" destination="N3Y-k1-d7r" id="Vpq-B6-3P8"/>
                         <outlet property="photoLabel" destination="5KT-hm-pv4" id="zdf-s9-KBW"/>
-                        <outlet property="stepLabel" destination="dXV-h0-HLs" id="kWX-6S-f0c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNn-iI-cSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -155,7 +153,6 @@
         <!--Voice Save View Controller-->
         <scene sceneID="cnv-td-mex">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BCK-0F-06P" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="voiceSaveViewController" id="4Mj-L9-ocJ" customClass="voiceSaveViewController" customModule="timeCapsule" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yhu-3D-i3C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -215,6 +212,7 @@
                         <outlet property="soundSlider" destination="vl6-O8-8Ik" id="n31-aQ-Rd4"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BCK-0F-06P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2986.9565217391305" y="131.91964285714286"/>
         </scene>
