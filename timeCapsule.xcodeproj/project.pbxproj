@@ -20,6 +20,9 @@
 		9051F19221C37B84006BA062 /* reminder btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9051F19121C37B84006BA062 /* reminder btn.png */; };
 		9051F1BF21C4C774006BA062 /* Share app.png in Resources */ = {isa = PBXBuildFile; fileRef = 9051F1BE21C4C774006BA062 /* Share app.png */; };
 		9051F1C321C4CD24006BA062 /* Time capsule.png in Resources */ = {isa = PBXBuildFile; fileRef = 9051F1C221C4CD24006BA062 /* Time capsule.png */; };
+		9053E3B221E4850B00D62739 /* videocam.png in Resources */ = {isa = PBXBuildFile; fileRef = 9053E3B121E4850B00D62739 /* videocam.png */; };
+		9053E3B421E4935900D62739 /* videoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053E3B321E4935900D62739 /* videoViewController.swift */; };
+		9088D9B921E46F50008C0099 /* videoSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088D9B821E46F50008C0099 /* videoSaveViewController.swift */; };
 		90AE467C21C8DDD500731FF1 /* photoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AE467B21C8DDD500731FF1 /* photoViewController.swift */; };
 		90AE468021CA082600731FF1 /* navcolor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 90AE467F21CA082500731FF1 /* navcolor.jpg */; };
 		90CD3DAD21CA3D71003A7422 /* library.png in Resources */ = {isa = PBXBuildFile; fileRef = 90CD3DAC21CA3D70003A7422 /* library.png */; };
@@ -48,6 +51,9 @@
 		9051F19121C37B84006BA062 /* reminder btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reminder btn.png"; sourceTree = "<group>"; };
 		9051F1BE21C4C774006BA062 /* Share app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share app.png"; sourceTree = "<group>"; };
 		9051F1C221C4CD24006BA062 /* Time capsule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Time capsule.png"; sourceTree = "<group>"; };
+		9053E3B121E4850B00D62739 /* videocam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videocam.png; sourceTree = "<group>"; };
+		9053E3B321E4935900D62739 /* videoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoViewController.swift; sourceTree = "<group>"; };
+		9088D9B821E46F50008C0099 /* videoSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoSaveViewController.swift; sourceTree = "<group>"; };
 		90AE467B21C8DDD500731FF1 /* photoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoViewController.swift; sourceTree = "<group>"; };
 		90AE467F21CA082500731FF1 /* navcolor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = navcolor.jpg; sourceTree = "<group>"; };
 		90CD3DAC21CA3D70003A7422 /* library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = library.png; path = ../../../Desktop/library.png; sourceTree = "<group>"; };
@@ -81,6 +87,7 @@
 				90AE467F21CA082500731FF1 /* navcolor.jpg */,
 				90D7C0E121DEE278006C6C09 /* microphone2.png */,
 				90D7C0DF21DEE271006C6C09 /* microphone.png */,
+				9053E3B121E4850B00D62739 /* videocam.png */,
 				90D7C0E521DEE2F3006C6C09 /* playBtn.png */,
 				90CD3DAC21CA3D70003A7422 /* library.png */,
 				9051F18F21C37B74006BA062 /* time capsule btn.jpg */,
@@ -112,7 +119,9 @@
 				9051F18421C375FC006BA062 /* LaunchScreen.storyboard */,
 				9051F18721C375FC006BA062 /* Info.plist */,
 				9051F17F21C375F4006BA062 /* timeCapsule.xcdatamodeld */,
+				9088D9B821E46F50008C0099 /* videoSaveViewController.swift */,
 				9051F18D21C3778B006BA062 /* UIColorHex.swift */,
+				9053E3B321E4935900D62739 /* videoViewController.swift */,
 				90AE467B21C8DDD500731FF1 /* photoViewController.swift */,
 				90263E7321C77C2000D01110 /* picsSaveViewController.swift */,
 			);
@@ -222,6 +231,7 @@
 				9051F1BF21C4C774006BA062 /* Share app.png in Resources */,
 				9051F18321C375FC006BA062 /* Assets.xcassets in Resources */,
 				90CD3DAD21CA3D71003A7422 /* library.png in Resources */,
+				9053E3B221E4850B00D62739 /* videocam.png in Resources */,
 				9051F17E21C375F4006BA062 /* Main.storyboard in Resources */,
 				90D7C0E221DEE278006C6C09 /* microphone2.png in Resources */,
 				9051F19021C37B74006BA062 /* time capsule btn.jpg in Resources */,
@@ -290,10 +300,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				90D7C09D21CB5CAC006C6C09 /* voiceSaveViewController.swift in Sources */,
+				9053E3B421E4935900D62739 /* videoViewController.swift in Sources */,
 				9051F18121C375F4006BA062 /* timeCapsule.xcdatamodeld in Sources */,
 				90AE467C21C8DDD500731FF1 /* photoViewController.swift in Sources */,
 				9051F18E21C3778B006BA062 /* UIColorHex.swift in Sources */,
 				9051F17B21C375F4006BA062 /* ViewController.swift in Sources */,
+				9088D9B921E46F50008C0099 /* videoSaveViewController.swift in Sources */,
 				9051F17921C375F4006BA062 /* AppDelegate.swift in Sources */,
 				90263E7421C77C2000D01110 /* picsSaveViewController.swift in Sources */,
 			);

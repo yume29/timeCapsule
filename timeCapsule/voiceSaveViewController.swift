@@ -20,22 +20,15 @@ class voiceSaveViewController: UIViewController,AVAudioRecorderDelegate, AVAudio
     
     @IBOutlet weak var soundSlider: UISlider!
     
+    @IBOutlet weak var okBtn: UIButton!
+    
 //    使う変数の宣言
 //    falseはレコードオフの状態
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
     var isRecording = false
     var isPlaying = false
-//    //タイマー変数を定義
-//    var timer = Timer()
-//    //次に再生するか一時停止するかを判断
-//    var playorpause = 0
-//    //曲が再生される前かされた後かを判定
-//    var flag = 0
-//    //曲の現在位置を一次的に保持
-//    var currenttime = 0.0
-//    //曲の長さを保持する変数
-//    var timeinterval = TimeInterval()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +37,7 @@ class voiceSaveViewController: UIViewController,AVAudioRecorderDelegate, AVAudio
         recordButton.setBackgroundImage(UIImage(named: "microphone.png"), for: .normal)
         playButton.setBackgroundImage(UIImage(named: "playBtn.png"), for: .normal)
         
+        
         //         影表示用のビュー
         let shadowView = UIView(frame: CGRect(x: 0, y: 0, width: 375, height:  667))
         shadowView.center = CGPoint(x: 375/2, y:667/2)
@@ -51,15 +45,24 @@ class voiceSaveViewController: UIViewController,AVAudioRecorderDelegate, AVAudio
         shadowView.layer.shadowOpacity = 0.5
         shadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
         shadowView.layer.shadowRadius = 5
+        
+//        丸角にする
+        okBtn.layer.cornerRadius = 10
+        okBtn.layer.masksToBounds = true
 //        影表示用ビューに画像ボタンを乗せる
         shadowView.addSubview(recordButton)
         shadowView.addSubview(playButton)
+        shadowView.addSubview(okBtn)
         
 //        影表示＋画像ボタンのビューを乗せる
         view.addSubview(shadowView)
+        view.addSubview(okBtn)
         
-//        スライダーのつまみ
+//        スライダーのプロパティ
+        view.addSubview(soundSlider)
         soundSlider.setValue(0, animated: true)
+        soundSlider.maximumValue = 10
+        soundSlider.minimumValue = 0
     }
     
     override func didReceiveMemoryWarning() {
@@ -150,31 +153,15 @@ class voiceSaveViewController: UIViewController,AVAudioRecorderDelegate, AVAudio
         return url
     }
     
-//    @IBAction func sliderplay(_ sender: Any) {
-//        var url = URL(fileURLWithPath: Bundle.main.path(forResource: "recording.m4a", ofType: nil)!)
-//        var error: Error?
-//        do {
-//            audioPlayer = try AVAudioPlayer(contentsOf: url)
-//        }
-//        catch let error {
-//        }
-//        if audioPlayer == nil {
-//            print("Error: \(error)")
-//        }
-//        audioPlayer.prepareToPlay()
-//        soundSlider.maximumValue = Float(audioPlayer.duration)
-//        soundSlider.value = 0.0
-//        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
-//        audioPlayer.play()
-//    }
-//
-//    @objc func updateTime(_ timer: Timer) {
-//        soundSlider.value = Float(audioPlayer.currentTime)
-//    }
-//
-//    @IBAction func slide(_ slider: UISlider) {
-//        audioPlayer.currentTime = TimeInterval(slider.value)
-//    }
+    
+    @IBAction func changePosition(_ sender: UISlider) {
+        print(sender.value)
+    }
+    
 
+    @IBAction func tapShowVideo(_ sender: UIButton) {
+        print("OKpush")
+    }
+    
     
 }

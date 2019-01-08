@@ -116,9 +116,11 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="explainLabel" destination="Thg-Xv-cVI" id="GNA-or-RR4"/>
                         <outlet property="libraryBtn" destination="xJ1-2f-cU4" id="tPQ-Nd-rLZ"/>
                         <outlet property="okBtn" destination="N3Y-k1-d7r" id="Vpq-B6-3P8"/>
                         <outlet property="photoLabel" destination="5KT-hm-pv4" id="zdf-s9-KBW"/>
+                        <outlet property="stepLabel" destination="dXV-h0-HLs" id="kWX-6S-f0c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNn-iI-cSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -153,6 +155,7 @@
         <!--Voice Save View Controller-->
         <scene sceneID="cnv-td-mex">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BCK-0F-06P" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="voiceSaveViewController" id="4Mj-L9-ocJ" customClass="voiceSaveViewController" customModule="timeCapsule" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yhu-3D-i3C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -185,30 +188,112 @@
                                     <action selector="play" destination="4Mj-L9-ocJ" eventType="touchUpInside" id="5rV-fQ-Gbn"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="715-6x-G6F">
-                                <rect key="frame" x="121" y="316" width="275" height="30"/>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vl6-O8-8Ik">
+                                <rect key="frame" x="118" y="489" width="210" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="minimumTrackTintColor" red="0.9321255088" green="0.34722284530000003" blue="0.3040541135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="maximumTrackTintColor" red="0.9321255088" green="0.34722284530000003" blue="0.3040541135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="thumbTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <action selector="slide:" destination="4Mj-L9-ocJ" eventType="valueChanged" id="EBM-2x-OQm"/>
+                                    <action selector="changePosition:" destination="4Mj-L9-ocJ" eventType="valueChanged" id="2jl-Kp-Icw"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNw-1o-ywS">
+                                <rect key="frame" x="170" y="721" width="106" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="OK btn.png"/>
+                                <connections>
+                                    <segue destination="PwG-bb-Tdu" kind="show" id="ziX-b8-j1g"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Zwu-P3-NrD"/>
                     </view>
                     <connections>
                         <outlet property="label" destination="icd-F1-MHN" id="MRp-k3-K4t"/>
+                        <outlet property="okBtn" destination="bNw-1o-ywS" id="Pxg-vB-RNK"/>
                         <outlet property="playButton" destination="mpv-Ws-F9S" id="kLh-qs-qMv"/>
                         <outlet property="recordButton" destination="8wD-yi-diA" id="i8d-XN-Q2I"/>
-                        <outlet property="soundSlider" destination="715-6x-G6F" id="QUU-MC-ry3"/>
+                        <outlet property="soundSlider" destination="vl6-O8-8Ik" id="n31-aQ-Rd4"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BCK-0F-06P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2986.9565217391305" y="131.91964285714286"/>
+        </scene>
+        <!--Video Save View Controller-->
+        <scene sceneID="nVT-JC-htB">
+            <objects>
+                <viewController id="PwG-bb-Tdu" customClass="videoSaveViewController" customModule="timeCapsule" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0h0-nS-qZZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step 3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doT-nd-UVl">
+                                <rect key="frame" x="149" y="151" width="117" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="33"/>
+                                <color key="textColor" red="0.9321255088" green="0.34722284530000003" blue="0.3040541135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgB-8V-hgW">
+                                <rect key="frame" x="130" y="399" width="155" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="videocam.png"/>
+                                <connections>
+                                    <action selector="openLibrary:" destination="PwG-bb-Tdu" eventType="touchUpInside" id="BdN-ru-noC"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="動画を選んでください" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uQV-ho-aDa">
+                                <rect key="frame" x="112" y="208" width="259" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETx-oK-ddS">
+                                <rect key="frame" x="130" y="704" width="106" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="OK btn.png"/>
+                                <connections>
+                                    <action selector="tapShowLetter:" destination="PwG-bb-Tdu" eventType="touchUpInside" id="BVD-4x-Imt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="TiL-Hg-aHT"/>
+                    </view>
+                    <connections>
+                        <outlet property="okBtn" destination="ETx-oK-ddS" id="MsP-jS-99s"/>
+                        <outlet property="stepLabel" destination="doT-nd-UVl" id="vZ4-wy-VgK"/>
+                        <outlet property="videoBtn" destination="HgB-8V-hgW" id="jNc-Nf-Bxf"/>
+                        <outlet property="videoLabel" destination="uQV-ho-aDa" id="KIj-dW-DUY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oZw-qs-klb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3773.913043478261" y="134.59821428571428"/>
+        </scene>
+        <!--Video View Controller-->
+        <scene sceneID="Rv7-Gp-uDd">
+            <objects>
+                <viewController id="Gzd-iv-7h1" customClass="videoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9qF-3o-P7h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hr9-Zz-P4h">
+                                <rect key="frame" x="20" y="121" width="374" height="370"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="rEd-vb-aFy"/>
+                    </view>
+                    <connections>
+                        <outlet property="getVideoView" destination="Hr9-Zz-P4h" id="5qR-Gt-bcl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qu8-S8-94d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4478.2608695652179" y="-174.10714285714286"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mpO-qc-BZ2">
@@ -235,5 +320,6 @@
         <image name="library.png" width="294" height="258"/>
         <image name="reminder btn.png" width="1024" height="423"/>
         <image name="time capsule btn.jpg" width="1025" height="425"/>
+        <image name="videocam.png" width="256" height="256"/>
     </resources>
 </document>
