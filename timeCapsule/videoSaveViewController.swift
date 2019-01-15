@@ -17,11 +17,14 @@ class videoSaveViewController: UIViewController,UIImagePickerControllerDelegate,
     
     @IBOutlet weak var videoBtn: UIButton!
     
+    @IBOutlet weak var videoBtnShadow: UIView!
+    
     @IBOutlet weak var videoLabel: UITextField!
     
     @IBOutlet weak var okBtn: UIButton!
     
-
+    @IBOutlet weak var okBtnShadow: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,27 +48,25 @@ class videoSaveViewController: UIViewController,UIImagePickerControllerDelegate,
         
         
         //         影表示用のビュー
-        let shadowView = UIView(frame: CGRect(x: 0, y: 0, width: 375, height:  667))
-        shadowView.center = CGPoint(x: 375/2, y:667/2)
-        shadowView.layer.shadowColor = UIColor.black.cgColor
-        shadowView.layer.shadowOpacity = 0.5
-        shadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        shadowView.layer.shadowRadius = 5
+        //動画ボタン
+        videoBtnShadow.layer.shadowColor = UIColor.black.cgColor
+        videoBtnShadow.layer.shadowOpacity = 0.5
+        videoBtnShadow.layer.shadowOffset = CGSize(width: 5, height: 5)
+        videoBtnShadow.layer.shadowRadius = 5
+        
+        //OKボタン
+        okBtnShadow.layer.shadowColor = UIColor.black.cgColor
+        okBtnShadow.layer.shadowOpacity = 0.5
+        okBtnShadow.layer.shadowOffset = CGSize(width: 5, height: 5)
+        okBtnShadow.layer.shadowRadius = 5
         
         //        ボタンの編集
-        
         //        丸角にする
         videoBtn.layer.cornerRadius = 10
         videoBtn.layer.masksToBounds = true
         
         okBtn.layer.cornerRadius = 10
         okBtn.layer.masksToBounds = true
-        //        影とボタンをくっつける
-        shadowView.addSubview(videoBtn)
-        shadowView.addSubview(okBtn)
-        //        くっつけたものをviewに乗せる
-        view.addSubview(shadowView)
-        
     }
     
     @IBAction func openLibrary(_ sender: Any) {
@@ -157,7 +158,7 @@ class videoSaveViewController: UIViewController,UIImagePickerControllerDelegate,
     
 
 
-    @IBAction func tapShoeVice(_ sender: UIButton) {
+    @IBAction func tapShowLetter(_ sender: UIButton) {
                 print ("OKpush")
             }
 

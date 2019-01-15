@@ -15,9 +15,13 @@ class picsSaveViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBOutlet weak var libraryBtn: UIButton!
     
+    @IBOutlet weak var libraryBtnShadow: UIView!
+    
     @IBOutlet weak var photoLabel: UITextField!
     
     @IBOutlet weak var okBtn: UIButton!
+    
+    @IBOutlet weak var okBtnShadow: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,26 +46,23 @@ class picsSaveViewController: UIViewController, UIImagePickerControllerDelegate,
         
         
         //         影表示用のビュー
-        let shadowView = UIView(frame: CGRect(x: 0, y: 0, width: 375, height:  667))
-        shadowView.center = CGPoint(x: 375/2, y:667/2)
-        shadowView.layer.shadowColor = UIColor.black.cgColor
-        shadowView.layer.shadowOpacity = 0.5
-        shadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        shadowView.layer.shadowRadius = 5
+
+        okBtnShadow.layer.shadowColor = UIColor.black.cgColor
+        okBtnShadow.layer.shadowOpacity = 0.5
+        okBtnShadow.layer.shadowOffset = CGSize(width: 5, height: 5)
+        okBtnShadow.layer.shadowRadius = 5
+        
+        libraryBtnShadow.layer.shadowColor = UIColor.black.cgColor
+        libraryBtnShadow.layer.shadowOpacity = 0.5
+        libraryBtnShadow.layer.shadowOffset = CGSize(width: 5, height: 5)
+        libraryBtnShadow.layer.shadowRadius = 5
         
         //        ボタンの編集
-        
         //        丸角にする
         libraryBtn.layer.cornerRadius = 10
         libraryBtn.layer.masksToBounds = true
         okBtn.layer.cornerRadius = 10
         okBtn.layer.masksToBounds = true
-        
-        //        影とボタンをくっつける
-        shadowView.addSubview(libraryBtn)
-        shadowView.addSubview(okBtn)
-        //        くっつけたものをviewに乗せる
-        view.addSubview(shadowView)
         
     }
     
@@ -92,7 +93,7 @@ class picsSaveViewController: UIViewController, UIImagePickerControllerDelegate,
                 //ストーリーボードを指定
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 // フォトライブラリーで画像が選択された時の処理
-                guard let voiceSaveViewController = storyboard.instantiateViewController(withIdentifier: "voiceSaveViewController") as? voiceSaveViewController
+                guard let picsSaveViewController = storyboard.instantiateViewController(withIdentifier: "picsSaveViewController") as? picsSaveViewController
                     else {
                         return
                 }
@@ -112,6 +113,8 @@ class picsSaveViewController: UIViewController, UIImagePickerControllerDelegate,
     //インスタ風ImagePickerの設定
     func YPImagePickerConfig(){
         var config = YPImagePickerConfiguration()
+        //保存するときに正方形じゃない
+        config.onlySquareImagesFromCamera = false
         //開いたときに写真だけ表示
         config.library.mediaType = .photo
         //ライブラリの写真を表示する際、1行に何枚写真を並べるか。

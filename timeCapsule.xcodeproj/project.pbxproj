@@ -25,6 +25,11 @@
 		9088D9B921E46F50008C0099 /* videoSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088D9B821E46F50008C0099 /* videoSaveViewController.swift */; };
 		90AE467C21C8DDD500731FF1 /* photoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AE467B21C8DDD500731FF1 /* photoViewController.swift */; };
 		90AE468021CA082600731FF1 /* navcolor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 90AE467F21CA082500731FF1 /* navcolor.jpg */; };
+		90C95C4721E622370088094D /* letterSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C95C4621E622370088094D /* letterSaveViewController.swift */; };
+		90C95C4921E633F70088094D /* passwordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C95C4821E633F70088094D /* passwordViewController.swift */; };
+		90C95C4B21E638DB0088094D /* Closed cap.png in Resources */ = {isa = PBXBuildFile; fileRef = 90C95C4A21E638DB0088094D /* Closed cap.png */; };
+		90C95C4D21E638E70088094D /* close BTN.png in Resources */ = {isa = PBXBuildFile; fileRef = 90C95C4C21E638E70088094D /* close BTN.png */; };
+		90C95C4F21E64AA50088094D /* DateSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C95C4E21E64AA50088094D /* DateSetViewController.swift */; };
 		90CD3DAD21CA3D71003A7422 /* library.png in Resources */ = {isa = PBXBuildFile; fileRef = 90CD3DAC21CA3D70003A7422 /* library.png */; };
 		90D7C09D21CB5CAC006C6C09 /* voiceSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D7C09C21CB5CAC006C6C09 /* voiceSaveViewController.swift */; };
 		90D7C09F21CB6474006C6C09 /* OK btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D7C09E21CB6473006C6C09 /* OK btn.png */; };
@@ -56,6 +61,11 @@
 		9088D9B821E46F50008C0099 /* videoSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoSaveViewController.swift; sourceTree = "<group>"; };
 		90AE467B21C8DDD500731FF1 /* photoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoViewController.swift; sourceTree = "<group>"; };
 		90AE467F21CA082500731FF1 /* navcolor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = navcolor.jpg; sourceTree = "<group>"; };
+		90C95C4621E622370088094D /* letterSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = letterSaveViewController.swift; sourceTree = "<group>"; };
+		90C95C4821E633F70088094D /* passwordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passwordViewController.swift; sourceTree = "<group>"; };
+		90C95C4A21E638DB0088094D /* Closed cap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Closed cap.png"; sourceTree = "<group>"; };
+		90C95C4C21E638E70088094D /* close BTN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close BTN.png"; sourceTree = "<group>"; };
+		90C95C4E21E64AA50088094D /* DateSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSetViewController.swift; sourceTree = "<group>"; };
 		90CD3DAC21CA3D70003A7422 /* library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = library.png; path = ../../../Desktop/library.png; sourceTree = "<group>"; };
 		90D7C09C21CB5CAC006C6C09 /* voiceSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voiceSaveViewController.swift; sourceTree = "<group>"; };
 		90D7C09E21CB6473006C6C09 /* OK btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OK btn.png"; sourceTree = "<group>"; };
@@ -86,10 +96,12 @@
 				90D7C0E321DEE2EA006C6C09 /* stopBtn.png */,
 				90AE467F21CA082500731FF1 /* navcolor.jpg */,
 				90D7C0E121DEE278006C6C09 /* microphone2.png */,
+				90C95C4A21E638DB0088094D /* Closed cap.png */,
 				90D7C0DF21DEE271006C6C09 /* microphone.png */,
 				9053E3B121E4850B00D62739 /* videocam.png */,
 				90D7C0E521DEE2F3006C6C09 /* playBtn.png */,
 				90CD3DAC21CA3D70003A7422 /* library.png */,
+				90C95C4C21E638E70088094D /* close BTN.png */,
 				9051F18F21C37B74006BA062 /* time capsule btn.jpg */,
 				90D7C09E21CB6473006C6C09 /* OK btn.png */,
 				9051F19121C37B84006BA062 /* reminder btn.png */,
@@ -114,10 +126,13 @@
 				9051F17821C375F4006BA062 /* AppDelegate.swift */,
 				9051F17A21C375F4006BA062 /* ViewController.swift */,
 				90D7C09C21CB5CAC006C6C09 /* voiceSaveViewController.swift */,
+				90C95C4E21E64AA50088094D /* DateSetViewController.swift */,
 				9051F17C21C375F4006BA062 /* Main.storyboard */,
 				9051F18221C375FC006BA062 /* Assets.xcassets */,
 				9051F18421C375FC006BA062 /* LaunchScreen.storyboard */,
 				9051F18721C375FC006BA062 /* Info.plist */,
+				90C95C4621E622370088094D /* letterSaveViewController.swift */,
+				90C95C4821E633F70088094D /* passwordViewController.swift */,
 				9051F17F21C375F4006BA062 /* timeCapsule.xcdatamodeld */,
 				9088D9B821E46F50008C0099 /* videoSaveViewController.swift */,
 				9051F18D21C3778B006BA062 /* UIColorHex.swift */,
@@ -238,6 +253,8 @@
 				90AE468021CA082600731FF1 /* navcolor.jpg in Resources */,
 				90D7C09F21CB6474006C6C09 /* OK btn.png in Resources */,
 				90D7C0E421DEE2EA006C6C09 /* stopBtn.png in Resources */,
+				90C95C4B21E638DB0088094D /* Closed cap.png in Resources */,
+				90C95C4D21E638E70088094D /* close BTN.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,13 +318,16 @@
 			files = (
 				90D7C09D21CB5CAC006C6C09 /* voiceSaveViewController.swift in Sources */,
 				9053E3B421E4935900D62739 /* videoViewController.swift in Sources */,
+				90C95C4921E633F70088094D /* passwordViewController.swift in Sources */,
 				9051F18121C375F4006BA062 /* timeCapsule.xcdatamodeld in Sources */,
 				90AE467C21C8DDD500731FF1 /* photoViewController.swift in Sources */,
 				9051F18E21C3778B006BA062 /* UIColorHex.swift in Sources */,
+				90C95C4721E622370088094D /* letterSaveViewController.swift in Sources */,
 				9051F17B21C375F4006BA062 /* ViewController.swift in Sources */,
 				9088D9B921E46F50008C0099 /* videoSaveViewController.swift in Sources */,
 				9051F17921C375F4006BA062 /* AppDelegate.swift in Sources */,
 				90263E7421C77C2000D01110 /* picsSaveViewController.swift in Sources */,
+				90C95C4F21E64AA50088094D /* DateSetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,25 +9,35 @@
 import UIKit
 import AVFoundation
 
-class voiceSaveViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+class voiceSaveViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDelegate,
+    UITableViewDelegate,UITableViewDataSource{
+
+    
     
 //    使う部品の宣言
-    @IBOutlet weak var label: UILabel!
+
     
     @IBOutlet weak var recordButton: UIButton!
-    
+    @IBOutlet weak var recordBtnShadow: UIView!
     @IBOutlet weak var playButton: UIButton!
-    
+    @IBOutlet weak var playBtnShadow: UIView!
     @IBOutlet weak var soundSlider: UISlider!
-    
     @IBOutlet weak var okBtn: UIButton!
-    
-//    使う変数の宣言
+    @IBOutlet weak var okBtnShadow: UIView!
+    @IBOutlet weak var soundTableView: UITableView!
+    //    使う変数の宣言
 //    falseはレコードオフの状態
     var audioRecorder: AVAudioRecorder!
-    var audioPlayer: AVAudioPlayer!
+    var player:AVAudioPlayer = AVAudioPlayer()
+    var playerItem:AVPlayerItem?
     var isRecording = false
     var isPlaying = false
+    var currentTimer:Float = 0
+    var timer: Timer?
+    var recordSound:[String] = []
+ 
+
+    
 
     
     override func viewDidLoad() {
@@ -38,44 +48,42 @@ class voiceSaveViewController: UIViewController,AVAudioRecorderDelegate, AVAudio
         playButton.setBackgroundImage(UIImage(named: "playBtn.png"), for: .normal)
         
         
-        //         影表示用のビュー
-        let shadowView = UIView(frame: CGRect(x: 0, y: 0, width: 375, height:  667))
-        shadowView.center = CGPoint(x: 375/2, y:667/2)
-        shadowView.layer.shadowColor = UIColor.black.cgColor
-        shadowView.layer.shadowOpacity = 0.5
-        shadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        shadowView.layer.shadowRadius = 5
+        //   影表示用のビュー
+        // 録音ボタン
+
+        recordBtnShadow.layer.shadowColor = UIColor.black.cgColor
+        recordBtnShadow.layer.shadowOpacity = 0.5
+        recordBtnShadow.layer.shadowOffset = CGSize(width: 5, height: 5)
+        recordBtnShadow.layer.shadowRadius = 5
+        //再生ボタン
+        playBtnShadow.layer.shadowColor = UIColor.black.cgColor
+        playBtnShadow.layer.shadowOpacity = 0.5
+        playBtnShadow.layer.shadowOffset = CGSize(width: 5, height: 5)
+        playBtnShadow.layer.shadowRadius = 5
+        //   OKボタン
+        okBtnShadow.layer.shadowColor = UIColor.black.cgColor
+        okBtnShadow.layer.shadowOpacity = 0.5
+        okBtnShadow.layer.shadowOffset = CGSize(width: 5, height: 5)
+        okBtnShadow.layer.shadowRadius = 5
+
         
 //        丸角にする
         okBtn.layer.cornerRadius = 10
         okBtn.layer.masksToBounds = true
-//        影表示用ビューに画像ボタンを乗せる
-        shadowView.addSubview(recordButton)
-        shadowView.addSubview(playButton)
-        shadowView.addSubview(okBtn)
-        
-//        影表示＋画像ボタンのビューを乗せる
-        view.addSubview(shadowView)
-        view.addSubview(okBtn)
-        
-//        スライダーのプロパティ
-        view.addSubview(soundSlider)
-        soundSlider.setValue(0, animated: true)
-        soundSlider.maximumValue = 10
-        soundSlider.minimumValue = 0
+
+//        最初はプレイボタンが押せない
+        playButton.isEnabled = false
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
-
+    
+//    録音ボタンが押されたときに呼ばれる
     
     @IBAction func record(){
+ 
+        
         if !isRecording {
             
             let session = AVAudioSession.sharedInstance()
-//            MARK:　ここのエラーを解決したい
             try! session.setCategory(.playAndRecord, mode: .default, options:.allowBluetoothA2DP)
             try! session.setActive(true)
             
@@ -86,79 +94,112 @@ class voiceSaveViewController: UIViewController,AVAudioRecorderDelegate, AVAudio
                 AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
             ]
             
-            audioRecorder = try! AVAudioRecorder(url: getURL(), settings: settings)
+            var recordTime = "\(getNowClockString()).m4a"
+            print("recordTime:",recordTime)
+            recordSound = [recordTime]
+            print("recordSound:",recordSound)
+
+            audioRecorder = try! AVAudioRecorder(url: getURL(file: recordTime), settings: settings)
+            print("保存するとき",recordTime)
             audioRecorder.delegate = self
             audioRecorder.record()
             
             isRecording = true
             
-            label.text = "録音中"
             recordButton.setBackgroundImage(UIImage(named: "microphone2.png"), for: .normal)
             playButton.isEnabled = false
+            
+        
             
         }else{
             
             audioRecorder.stop()
             isRecording = false
+            self.soundTableView.reloadData()
+            //プレーヤーに音声をセット
             
-            label.text = "待機中"
+            print("取り出すとき",recordSound)
+            player = try! AVAudioPlayer(contentsOf: getURL(file: recordSound[0]))
+
+    
             recordButton.setBackgroundImage(UIImage(named: "microphone.png"), for: .normal)
             playButton.isEnabled = true
             
         }
     }
     
+//    再生のボタンが押されたとき、停止ボタンが押されたとき
     @IBAction func play(){
+
         if !isPlaying {
-            
-            audioPlayer = try! AVAudioPlayer(contentsOf: getURL())
-            audioPlayer.delegate = self
-            audioPlayer.play()
-            
+            print("memo:再生false",isPlaying)
+
+            //スライダー.音楽ファイルの長さと同期.
+            soundSlider.maximumValue = Float(player.duration)
+
+            player.play()
+            self.timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(voiceSaveViewController.timerUpdate), userInfo: nil, repeats: true)
+            //再生中モードにする
             isPlaying = true
-            
-            label.text = "再生中"
+
             playButton.setBackgroundImage(UIImage(named: "stopBtn.png"),for: .normal)
             recordButton.isEnabled = false
-            
+
         }else{
-            
-            audioPlayer.stop()
+            player.currentTime = TimeInterval(currentTimer)
+            player.stop()
             isPlaying = false
-            
-            label.text = "待機中"
             playButton.setBackgroundImage(UIImage(named: "playBtn.png"), for: .normal)
             recordButton.isEnabled = true
-            
+
         }
     }
     
+//    再生終了時に発生する関数
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        if flag {
-            
-            audioPlayer.stop()
-            isPlaying = false
-            
-            label.text = "待機中"
-            playButton.setBackgroundImage(UIImage(named: "playBtn.png"), for: .normal)
-            recordButton.isEnabled = true
-            
-        }
+        player.stop()
+        isPlaying = false
+        playButton.setBackgroundImage(UIImage(named: "playBtn.png"), for: .normal)
+        recordButton.isEnabled = true
     }
     
-    func getURL() -> URL{
+//    スライダーが動かされたときに呼ばれる
+    @IBAction func valueChanged(_ sender: UISlider) {
+        player.currentTime = TimeInterval(sender.value)
+    }
+//    音声のURLを取得する
+    func getURL(file:String) -> URL{
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let docsDirect = paths[0]
-        let url = docsDirect.appendingPathComponent("recording.m4a")
+        let url = docsDirect.appendingPathComponent(file)
+        print(url)
         return url
     }
-    
-    
-    @IBAction func changePosition(_ sender: UISlider) {
-        print(sender.value)
+//スライダーのつまみを自動で動かす
+    @objc func timerUpdate(){
+        print("memo:currentTimer",currentTimer)
+        currentTimer = Float(player.currentTime)
+        soundSlider.value = currentTimer
     }
-    
-
+    //テーブルセルの数
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return recordSound.count
+    }
+//   セルの中身
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "myCell")
+        cell.textLabel!.text = recordSound[indexPath.row]
+        return cell
+    }
+//    現在時刻をstringで生成する関数
+    func getNowClockString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMddHHmmss"
+        let now = Date()
+        return formatter.string(from: now)
+    }
+//    次の画面へ遷移
     @IBAction func tapShowVideo(_ sender: UIButton) {
         print("OKpush")
     }

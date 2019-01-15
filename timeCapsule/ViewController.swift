@@ -15,11 +15,15 @@ class ViewController: UIViewController {
 //    リマインダーのボタン
     @IBOutlet weak var reminderBtn: UIButton!
     
-//    タイムカプセルのボタン
+    @IBOutlet weak var reminderBtnShadow: UIView!
+    //    タイムカプセルのボタン
     @IBOutlet weak var timeCapsuleBtn: UIButton!
     
+    @IBOutlet weak var timeCapsuleBtnShadow: UIView!
     
     @IBOutlet weak var shareBtn: UIButton!
+    
+    @IBOutlet weak var shareBtnShadow: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +33,21 @@ class ViewController: UIViewController {
 //FCEFB7
         
 //         影表示用のビュー
-            let shadowView = UIView(frame: CGRect(x: 0, y: 0, width: 375, height:  667))
-            shadowView.center = CGPoint(x: 375/2, y:667/2)
-            shadowView.layer.shadowColor = UIColor.black.cgColor
-            shadowView.layer.shadowOpacity = 0.5
-            shadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
-            shadowView.layer.shadowRadius = 5
+        //REMINDERボタン
+        reminderBtnShadow.layer.shadowColor = UIColor.black.cgColor
+        reminderBtnShadow.layer.shadowOpacity = 0.5
+        reminderBtnShadow.layer.shadowOffset = CGSize(width: 5, height: 5)
+        reminderBtnShadow.layer.shadowRadius = 5
+        //タイムカプセルボタン
+        timeCapsuleBtnShadow.layer.shadowColor = UIColor.black.cgColor
+        timeCapsuleBtnShadow.layer.shadowOpacity = 0.5
+        timeCapsuleBtnShadow.layer.shadowOffset = CGSize(width: 5, height: 5)
+        timeCapsuleBtnShadow.layer.shadowRadius = 5
+        //シェアボタン
+        shareBtnShadow.layer.shadowColor = UIColor.black.cgColor
+        shareBtnShadow.layer.shadowOpacity = 0.5
+        shareBtnShadow.layer.shadowOffset = CGSize(width: 5, height: 5)
+        shareBtnShadow.layer.shadowRadius = 5
 
 //        リマインダーボタン画像
         reminderBtn.setBackgroundImage(UIImage(named: "reminder btn.png"), for: .normal)
@@ -43,31 +56,13 @@ class ViewController: UIViewController {
             reminderBtn.layer.cornerRadius = 10
             reminderBtn.layer.masksToBounds = true
         
-//          影表示用のビューに画像ボタンを乗せる
-            shadowView.addSubview(reminderBtn)
-        
-//           影表示+画像ボタンのビューを乗せる
-            view.addSubview(shadowView)
-
-
-
 //        タイムカプセルボタン画像
         timeCapsuleBtn.setBackgroundImage(UIImage(named: "time capsule btn.jpg"), for: .normal)
 //        丸角にする
            timeCapsuleBtn.layer.cornerRadius = 10
            timeCapsuleBtn.layer.masksToBounds = true
-        
-//          影表示用のビューに画像ボタンを乗せる
-          shadowView.addSubview(timeCapsuleBtn)
-        
-//           影表示+画像ボタンのビューを乗せる
-          view.addSubview(shadowView)
-        
-//        シェアボタン
-//          影表示用のビューに画像ボタンを乗せる
-        shadowView.addSubview(shareBtn)
-//           影表示+画像ボタンのビューを乗せる
-        view.addSubview(shadowView)
+
+
     }
 
 //　シェアボタンのメゾット
