@@ -9,7 +9,7 @@
 import UIKit
 
 class DateSetViewController: UIViewController {
-
+    
     @IBOutlet weak var closeBtn: UIButton!
     
     @IBOutlet weak var closeBtnShadow: UIView!
@@ -31,14 +31,14 @@ class DateSetViewController: UIViewController {
         closeBtnShadow.layer.shadowRadius = 5
         
         
-//        丸角にする
+        //        丸角にする
         
         closeBtn.layer.cornerRadius = 10
         closeBtn.layer.masksToBounds = true
         
     }
-
-//    今日の日付を取得し、5年後までをdatepickerで指定。
+    
+    //    今日の日付を取得し、5年後までをdatepickerで指定。
     func set5YearValidation() {
         let currentDate: Date = Date()
         var calendar: Calendar = Calendar(identifier: Calendar.Identifier.gregorian)

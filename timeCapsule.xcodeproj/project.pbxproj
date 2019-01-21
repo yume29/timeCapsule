@@ -8,6 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		2DA1F497E948984F31D7CF69 /* Pods_timeCapsule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD96F6C072B1D45E8F305E93 /* Pods_timeCapsule.framework */; };
+		901E00D521EEB9F700E84A04 /* Icon-App-76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00C521EEB9F600E84A04 /* Icon-App-76x76@2x.png */; };
+		901E00D621EEB9F700E84A04 /* Icon-App-29x29@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00C621EEB9F600E84A04 /* Icon-App-29x29@1x.png */; };
+		901E00D721EEB9F700E84A04 /* Icon-App-40x40@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00C721EEB9F600E84A04 /* Icon-App-40x40@1x.png */; };
+		901E00D821EEB9F700E84A04 /* Icon-App-20x20@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00C821EEB9F600E84A04 /* Icon-App-20x20@1x.png */; };
+		901E00D921EEB9F700E84A04 /* Icon-App-83.5x83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00C921EEB9F600E84A04 /* Icon-App-83.5x83.5@2x.png */; };
+		901E00DA21EEB9F700E84A04 /* Icon-App-20x20@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00CA21EEB9F600E84A04 /* Icon-App-20x20@3x.png */; };
+		901E00DB21EEB9F700E84A04 /* ItunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00CB21EEB9F600E84A04 /* ItunesArtwork@2x.png */; };
+		901E00DC21EEB9F700E84A04 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 901E00CC21EEB9F600E84A04 /* Contents.json */; };
+		901E00DD21EEB9F700E84A04 /* Icon-App-20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00CD21EEB9F600E84A04 /* Icon-App-20x20@2x.png */; };
+		901E00DE21EEB9F700E84A04 /* Icon-App-29x29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00CE21EEB9F600E84A04 /* Icon-App-29x29@3x.png */; };
+		901E00DF21EEB9F700E84A04 /* Icon-App-40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00CF21EEB9F600E84A04 /* Icon-App-40x40@2x.png */; };
+		901E00E021EEB9F700E84A04 /* Icon-App-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00D021EEB9F600E84A04 /* Icon-App-60x60@3x.png */; };
+		901E00E121EEB9F700E84A04 /* Icon-App-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00D121EEB9F600E84A04 /* Icon-App-60x60@2x.png */; };
+		901E00E221EEB9F700E84A04 /* Icon-App-76x76@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00D221EEB9F600E84A04 /* Icon-App-76x76@1x.png */; };
+		901E00E321EEB9F700E84A04 /* Icon-App-40x40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00D321EEB9F600E84A04 /* Icon-App-40x40@3x.png */; };
+		901E00E421EEB9F700E84A04 /* Icon-App-29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00D421EEB9F600E84A04 /* Icon-App-29x29@2x.png */; };
+		901E00E621EEF26400E84A04 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00E521EEF26400E84A04 /* iTunesArtwork@2x.png */; };
 		90263E7421C77C2000D01110 /* picsSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90263E7321C77C2000D01110 /* picsSaveViewController.swift */; };
 		9051F17921C375F4006BA062 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051F17821C375F4006BA062 /* AppDelegate.swift */; };
 		9051F17B21C375F4006BA062 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051F17A21C375F4006BA062 /* ViewController.swift */; };
@@ -22,7 +39,11 @@
 		9051F1C321C4CD24006BA062 /* Time capsule.png in Resources */ = {isa = PBXBuildFile; fileRef = 9051F1C221C4CD24006BA062 /* Time capsule.png */; };
 		9053E3B221E4850B00D62739 /* videocam.png in Resources */ = {isa = PBXBuildFile; fileRef = 9053E3B121E4850B00D62739 /* videocam.png */; };
 		9053E3B421E4935900D62739 /* videoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053E3B321E4935900D62739 /* videoViewController.swift */; };
+		905FB17321F072D80036D7CF /* reminderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905FB17121F072D80036D7CF /* reminderCollectionViewCell.swift */; };
+		905FB17421F072D80036D7CF /* reminderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 905FB17221F072D80036D7CF /* reminderCollectionViewCell.xib */; };
 		9088D9B921E46F50008C0099 /* videoSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088D9B821E46F50008C0099 /* videoSaveViewController.swift */; };
+		9093F77D21F54C1A00DC9AB0 /* voiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9093F77B21F54C1A00DC9AB0 /* voiceTableViewCell.swift */; };
+		9093F77E21F54C1A00DC9AB0 /* voiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9093F77C21F54C1A00DC9AB0 /* voiceTableViewCell.xib */; };
 		90AE467C21C8DDD500731FF1 /* photoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AE467B21C8DDD500731FF1 /* photoViewController.swift */; };
 		90AE468021CA082600731FF1 /* navcolor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 90AE467F21CA082500731FF1 /* navcolor.jpg */; };
 		90C95C4721E622370088094D /* letterSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C95C4621E622370088094D /* letterSaveViewController.swift */; };
@@ -31,6 +52,7 @@
 		90C95C4D21E638E70088094D /* close BTN.png in Resources */ = {isa = PBXBuildFile; fileRef = 90C95C4C21E638E70088094D /* close BTN.png */; };
 		90C95C4F21E64AA50088094D /* DateSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C95C4E21E64AA50088094D /* DateSetViewController.swift */; };
 		90CD3DAD21CA3D71003A7422 /* library.png in Resources */ = {isa = PBXBuildFile; fileRef = 90CD3DAC21CA3D70003A7422 /* library.png */; };
+		90D700E721EDD24900EE33A6 /* reminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D700E621EDD24800EE33A6 /* reminderViewController.swift */; };
 		90D7C09D21CB5CAC006C6C09 /* voiceSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D7C09C21CB5CAC006C6C09 /* voiceSaveViewController.swift */; };
 		90D7C09F21CB6474006C6C09 /* OK btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D7C09E21CB6473006C6C09 /* OK btn.png */; };
 		90D7C0E021DEE271006C6C09 /* microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D7C0DF21DEE271006C6C09 /* microphone.png */; };
@@ -42,6 +64,23 @@
 /* Begin PBXFileReference section */
 		09A04D3B044E90FBFAD9859A /* Pods-timeCapsule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timeCapsule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-timeCapsule/Pods-timeCapsule.debug.xcconfig"; sourceTree = "<group>"; };
 		3C0B120D01526C5E116AFC90 /* Pods-timeCapsule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timeCapsule.release.xcconfig"; path = "Pods/Target Support Files/Pods-timeCapsule/Pods-timeCapsule.release.xcconfig"; sourceTree = "<group>"; };
+		901E00C521EEB9F600E84A04 /* Icon-App-76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-76x76@2x.png"; sourceTree = "<group>"; };
+		901E00C621EEB9F600E84A04 /* Icon-App-29x29@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@1x.png"; sourceTree = "<group>"; };
+		901E00C721EEB9F600E84A04 /* Icon-App-40x40@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-40x40@1x.png"; sourceTree = "<group>"; };
+		901E00C821EEB9F600E84A04 /* Icon-App-20x20@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-20x20@1x.png"; sourceTree = "<group>"; };
+		901E00C921EEB9F600E84A04 /* Icon-App-83.5x83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-83.5x83.5@2x.png"; sourceTree = "<group>"; };
+		901E00CA21EEB9F600E84A04 /* Icon-App-20x20@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-20x20@3x.png"; sourceTree = "<group>"; };
+		901E00CB21EEB9F600E84A04 /* ItunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ItunesArtwork@2x.png"; sourceTree = "<group>"; };
+		901E00CC21EEB9F600E84A04 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		901E00CD21EEB9F600E84A04 /* Icon-App-20x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-20x20@2x.png"; sourceTree = "<group>"; };
+		901E00CE21EEB9F600E84A04 /* Icon-App-29x29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@3x.png"; sourceTree = "<group>"; };
+		901E00CF21EEB9F600E84A04 /* Icon-App-40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-40x40@2x.png"; sourceTree = "<group>"; };
+		901E00D021EEB9F600E84A04 /* Icon-App-60x60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-60x60@3x.png"; sourceTree = "<group>"; };
+		901E00D121EEB9F600E84A04 /* Icon-App-60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-60x60@2x.png"; sourceTree = "<group>"; };
+		901E00D221EEB9F600E84A04 /* Icon-App-76x76@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-76x76@1x.png"; sourceTree = "<group>"; };
+		901E00D321EEB9F600E84A04 /* Icon-App-40x40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-40x40@3x.png"; sourceTree = "<group>"; };
+		901E00D421EEB9F600E84A04 /* Icon-App-29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@2x.png"; sourceTree = "<group>"; };
+		901E00E521EEF26400E84A04 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iTunesArtwork@2x.png"; path = "../../../../Library/Containers/com.apple.mail/Data/Library/Mail Downloads/5A966126-2CE3-467A-AAD3-FCDC52306B2B/Time capsule/ios/iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		90263E7321C77C2000D01110 /* picsSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = picsSaveViewController.swift; sourceTree = "<group>"; };
 		9051F17521C375F4006BA062 /* timeCapsule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timeCapsule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9051F17821C375F4006BA062 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +97,11 @@
 		9051F1C221C4CD24006BA062 /* Time capsule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Time capsule.png"; sourceTree = "<group>"; };
 		9053E3B121E4850B00D62739 /* videocam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videocam.png; sourceTree = "<group>"; };
 		9053E3B321E4935900D62739 /* videoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoViewController.swift; sourceTree = "<group>"; };
+		905FB17121F072D80036D7CF /* reminderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reminderCollectionViewCell.swift; sourceTree = "<group>"; };
+		905FB17221F072D80036D7CF /* reminderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = reminderCollectionViewCell.xib; sourceTree = "<group>"; };
 		9088D9B821E46F50008C0099 /* videoSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoSaveViewController.swift; sourceTree = "<group>"; };
+		9093F77B21F54C1A00DC9AB0 /* voiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voiceTableViewCell.swift; sourceTree = "<group>"; };
+		9093F77C21F54C1A00DC9AB0 /* voiceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = voiceTableViewCell.xib; sourceTree = "<group>"; };
 		90AE467B21C8DDD500731FF1 /* photoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoViewController.swift; sourceTree = "<group>"; };
 		90AE467F21CA082500731FF1 /* navcolor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = navcolor.jpg; sourceTree = "<group>"; };
 		90C95C4621E622370088094D /* letterSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = letterSaveViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +110,7 @@
 		90C95C4C21E638E70088094D /* close BTN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close BTN.png"; sourceTree = "<group>"; };
 		90C95C4E21E64AA50088094D /* DateSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSetViewController.swift; sourceTree = "<group>"; };
 		90CD3DAC21CA3D70003A7422 /* library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = library.png; path = ../../../Desktop/library.png; sourceTree = "<group>"; };
+		90D700E621EDD24800EE33A6 /* reminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reminderViewController.swift; sourceTree = "<group>"; };
 		90D7C09C21CB5CAC006C6C09 /* voiceSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voiceSaveViewController.swift; sourceTree = "<group>"; };
 		90D7C09E21CB6473006C6C09 /* OK btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OK btn.png"; sourceTree = "<group>"; };
 		90D7C0DF21DEE271006C6C09 /* microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone.png; sourceTree = "<group>"; };
@@ -88,6 +132,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		901E00C421EEB9F600E84A04 /* AppIcon.appiconset */ = {
+			isa = PBXGroup;
+			children = (
+				901E00C521EEB9F600E84A04 /* Icon-App-76x76@2x.png */,
+				901E00C621EEB9F600E84A04 /* Icon-App-29x29@1x.png */,
+				901E00C721EEB9F600E84A04 /* Icon-App-40x40@1x.png */,
+				901E00E521EEF26400E84A04 /* iTunesArtwork@2x.png */,
+				901E00C821EEB9F600E84A04 /* Icon-App-20x20@1x.png */,
+				901E00C921EEB9F600E84A04 /* Icon-App-83.5x83.5@2x.png */,
+				901E00CA21EEB9F600E84A04 /* Icon-App-20x20@3x.png */,
+				901E00CB21EEB9F600E84A04 /* ItunesArtwork@2x.png */,
+				901E00CC21EEB9F600E84A04 /* Contents.json */,
+				901E00CD21EEB9F600E84A04 /* Icon-App-20x20@2x.png */,
+				901E00CE21EEB9F600E84A04 /* Icon-App-29x29@3x.png */,
+				901E00CF21EEB9F600E84A04 /* Icon-App-40x40@2x.png */,
+				901E00D021EEB9F600E84A04 /* Icon-App-60x60@3x.png */,
+				901E00D121EEB9F600E84A04 /* Icon-App-60x60@2x.png */,
+				901E00D221EEB9F600E84A04 /* Icon-App-76x76@1x.png */,
+				901E00D321EEB9F600E84A04 /* Icon-App-40x40@3x.png */,
+				901E00D421EEB9F600E84A04 /* Icon-App-29x29@2x.png */,
+			);
+			path = AppIcon.appiconset;
+			sourceTree = "<group>";
+		};
 		9051F16C21C375F4006BA062 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +175,7 @@
 				9051F19121C37B84006BA062 /* reminder btn.png */,
 				9051F1BE21C4C774006BA062 /* Share app.png */,
 				9051F1C221C4CD24006BA062 /* Time capsule.png */,
+				901E00C421EEB9F600E84A04 /* AppIcon.appiconset */,
 				F695FDA1F0D89739D3438C93 /* Pods */,
 				DE26D9CC42CB69D8B6032259 /* Frameworks */,
 			);
@@ -127,7 +196,12 @@
 				9051F17A21C375F4006BA062 /* ViewController.swift */,
 				90D7C09C21CB5CAC006C6C09 /* voiceSaveViewController.swift */,
 				90C95C4E21E64AA50088094D /* DateSetViewController.swift */,
+				90D700E621EDD24800EE33A6 /* reminderViewController.swift */,
 				9051F17C21C375F4006BA062 /* Main.storyboard */,
+				9093F77B21F54C1A00DC9AB0 /* voiceTableViewCell.swift */,
+				9093F77C21F54C1A00DC9AB0 /* voiceTableViewCell.xib */,
+				905FB17121F072D80036D7CF /* reminderCollectionViewCell.swift */,
+				905FB17221F072D80036D7CF /* reminderCollectionViewCell.xib */,
 				9051F18221C375FC006BA062 /* Assets.xcassets */,
 				9051F18421C375FC006BA062 /* LaunchScreen.storyboard */,
 				9051F18721C375FC006BA062 /* Info.plist */,
@@ -240,20 +314,39 @@
 			files = (
 				9051F18621C375FC006BA062 /* LaunchScreen.storyboard in Resources */,
 				9051F1C321C4CD24006BA062 /* Time capsule.png in Resources */,
+				901E00D621EEB9F700E84A04 /* Icon-App-29x29@1x.png in Resources */,
+				901E00D521EEB9F700E84A04 /* Icon-App-76x76@2x.png in Resources */,
+				901E00DD21EEB9F700E84A04 /* Icon-App-20x20@2x.png in Resources */,
+				901E00E421EEB9F700E84A04 /* Icon-App-29x29@2x.png in Resources */,
 				90D7C0E621DEE2F3006C6C09 /* playBtn.png in Resources */,
+				901E00E221EEB9F700E84A04 /* Icon-App-76x76@1x.png in Resources */,
+				901E00E121EEB9F700E84A04 /* Icon-App-60x60@2x.png in Resources */,
+				901E00DC21EEB9F700E84A04 /* Contents.json in Resources */,
+				901E00D721EEB9F700E84A04 /* Icon-App-40x40@1x.png in Resources */,
 				90D7C0E021DEE271006C6C09 /* microphone.png in Resources */,
 				9051F19221C37B84006BA062 /* reminder btn.png in Resources */,
+				901E00DF21EEB9F700E84A04 /* Icon-App-40x40@2x.png in Resources */,
 				9051F1BF21C4C774006BA062 /* Share app.png in Resources */,
+				901E00DA21EEB9F700E84A04 /* Icon-App-20x20@3x.png in Resources */,
 				9051F18321C375FC006BA062 /* Assets.xcassets in Resources */,
+				901E00DB21EEB9F700E84A04 /* ItunesArtwork@2x.png in Resources */,
+				901E00D921EEB9F700E84A04 /* Icon-App-83.5x83.5@2x.png in Resources */,
 				90CD3DAD21CA3D71003A7422 /* library.png in Resources */,
+				9093F77E21F54C1A00DC9AB0 /* voiceTableViewCell.xib in Resources */,
 				9053E3B221E4850B00D62739 /* videocam.png in Resources */,
+				901E00E621EEF26400E84A04 /* iTunesArtwork@2x.png in Resources */,
+				905FB17421F072D80036D7CF /* reminderCollectionViewCell.xib in Resources */,
+				901E00DE21EEB9F700E84A04 /* Icon-App-29x29@3x.png in Resources */,
 				9051F17E21C375F4006BA062 /* Main.storyboard in Resources */,
 				90D7C0E221DEE278006C6C09 /* microphone2.png in Resources */,
+				901E00E321EEB9F700E84A04 /* Icon-App-40x40@3x.png in Resources */,
+				901E00D821EEB9F700E84A04 /* Icon-App-20x20@1x.png in Resources */,
 				9051F19021C37B74006BA062 /* time capsule btn.jpg in Resources */,
 				90AE468021CA082600731FF1 /* navcolor.jpg in Resources */,
 				90D7C09F21CB6474006C6C09 /* OK btn.png in Resources */,
 				90D7C0E421DEE2EA006C6C09 /* stopBtn.png in Resources */,
 				90C95C4B21E638DB0088094D /* Closed cap.png in Resources */,
+				901E00E021EEB9F700E84A04 /* Icon-App-60x60@3x.png in Resources */,
 				90C95C4D21E638E70088094D /* close BTN.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +412,7 @@
 				90D7C09D21CB5CAC006C6C09 /* voiceSaveViewController.swift in Sources */,
 				9053E3B421E4935900D62739 /* videoViewController.swift in Sources */,
 				90C95C4921E633F70088094D /* passwordViewController.swift in Sources */,
+				90D700E721EDD24900EE33A6 /* reminderViewController.swift in Sources */,
 				9051F18121C375F4006BA062 /* timeCapsule.xcdatamodeld in Sources */,
 				90AE467C21C8DDD500731FF1 /* photoViewController.swift in Sources */,
 				9051F18E21C3778B006BA062 /* UIColorHex.swift in Sources */,
@@ -327,7 +421,9 @@
 				9088D9B921E46F50008C0099 /* videoSaveViewController.swift in Sources */,
 				9051F17921C375F4006BA062 /* AppDelegate.swift in Sources */,
 				90263E7421C77C2000D01110 /* picsSaveViewController.swift in Sources */,
+				905FB17321F072D80036D7CF /* reminderCollectionViewCell.swift in Sources */,
 				90C95C4F21E64AA50088094D /* DateSetViewController.swift in Sources */,
+				9093F77D21F54C1A00DC9AB0 /* voiceTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
