@@ -21,6 +21,7 @@ class reminderViewController: UIViewController,UIImagePickerControllerDelegate,U
     var screenWidth:CGFloat!
     var screenHeight:CGFloat!
     var scrollView:UIScrollView!
+    var selectedImage:UIImage?
     
     override func viewDidLoad() {
         
@@ -127,6 +128,19 @@ extension reminderViewController: UICollectionViewDataSource {
 
         return cell
         }
+    
+    // Cell が選択された場合
+     func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath: IndexPath){
+        
+        print("セルが選択されました")
+
+        // [indexPath.row] から画像名を探し、UImage を設定
+        selectedImage = picList[didSelectItemAtIndexPath.row]
+        if selectedImage != nil {
+            // SubViewController へ遷移するために Segue を呼び出す
+            performSegue(withIdentifier: "showDetailSegue",sender: nil)
+        }
+    }
 
 }
 extension UIView {

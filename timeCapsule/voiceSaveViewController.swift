@@ -171,7 +171,7 @@ UITableViewDelegate,UITableViewDataSource{
         
         cell.nameField!.text = recordSound[indexPath.row]
         cell.playBtn.setBackgroundImage(UIImage(named: "playBtn.png"), for: .normal)
-        
+        cell.subView.isHidden = false
         
         return cell
     }

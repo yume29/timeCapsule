@@ -44,6 +44,7 @@
 		9088D9B921E46F50008C0099 /* videoSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088D9B821E46F50008C0099 /* videoSaveViewController.swift */; };
 		9093F77D21F54C1A00DC9AB0 /* voiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9093F77B21F54C1A00DC9AB0 /* voiceTableViewCell.swift */; };
 		9093F77E21F54C1A00DC9AB0 /* voiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9093F77C21F54C1A00DC9AB0 /* voiceTableViewCell.xib */; };
+		9093F78021F6F4B000DC9AB0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9093F77F21F6F4B000DC9AB0 /* DetailViewController.swift */; };
 		90AE467C21C8DDD500731FF1 /* photoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AE467B21C8DDD500731FF1 /* photoViewController.swift */; };
 		90AE468021CA082600731FF1 /* navcolor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 90AE467F21CA082500731FF1 /* navcolor.jpg */; };
 		90C95C4721E622370088094D /* letterSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C95C4621E622370088094D /* letterSaveViewController.swift */; };
@@ -102,6 +103,7 @@
 		9088D9B821E46F50008C0099 /* videoSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoSaveViewController.swift; sourceTree = "<group>"; };
 		9093F77B21F54C1A00DC9AB0 /* voiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voiceTableViewCell.swift; sourceTree = "<group>"; };
 		9093F77C21F54C1A00DC9AB0 /* voiceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = voiceTableViewCell.xib; sourceTree = "<group>"; };
+		9093F77F21F6F4B000DC9AB0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		90AE467B21C8DDD500731FF1 /* photoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoViewController.swift; sourceTree = "<group>"; };
 		90AE467F21CA082500731FF1 /* navcolor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = navcolor.jpg; sourceTree = "<group>"; };
 		90C95C4621E622370088094D /* letterSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = letterSaveViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				9051F17A21C375F4006BA062 /* ViewController.swift */,
 				90D7C09C21CB5CAC006C6C09 /* voiceSaveViewController.swift */,
 				90C95C4E21E64AA50088094D /* DateSetViewController.swift */,
+				9093F77F21F6F4B000DC9AB0 /* DetailViewController.swift */,
 				90D700E621EDD24800EE33A6 /* reminderViewController.swift */,
 				9051F17C21C375F4006BA062 /* Main.storyboard */,
 				9093F77B21F54C1A00DC9AB0 /* voiceTableViewCell.swift */,
@@ -416,6 +419,7 @@
 				9051F18121C375F4006BA062 /* timeCapsule.xcdatamodeld in Sources */,
 				90AE467C21C8DDD500731FF1 /* photoViewController.swift in Sources */,
 				9051F18E21C3778B006BA062 /* UIColorHex.swift in Sources */,
+				9093F78021F6F4B000DC9AB0 /* DetailViewController.swift in Sources */,
 				90C95C4721E622370088094D /* letterSaveViewController.swift in Sources */,
 				9051F17B21C375F4006BA062 /* ViewController.swift in Sources */,
 				9088D9B921E46F50008C0099 /* videoSaveViewController.swift in Sources */,
