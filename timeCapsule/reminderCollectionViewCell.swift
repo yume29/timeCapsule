@@ -12,8 +12,10 @@ class reminderCollectionViewCell: UICollectionViewCell {
     
     
     @IBOutlet weak var reminderPic: UIImageView!
+
+    @IBOutlet weak var memoField: UILabel!
     
-    @IBOutlet weak var memoField: UITextField!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

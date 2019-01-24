@@ -338,21 +338,21 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="170" height="138"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="memo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gmd-mr-OpT">
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MEMO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IF9-Zu-8mO">
                                                     <rect key="frame" x="0.0" y="105" width="170" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                         <size key="customSize" width="170" height="138"/>
                                         <connections>
-                                            <outlet property="memoField" destination="Gmd-mr-OpT" id="yUc-aE-Ztg"/>
+                                            <outlet property="memoField" destination="IF9-Zu-8mO" id="Vhz-Pk-dVh"/>
                                             <outlet property="reminderPic" destination="XG1-KG-bHU" id="dp7-h4-OHr"/>
                                         </connections>
                                     </collectionViewCell>
@@ -369,7 +369,7 @@
                     </view>
                     <connections>
                         <outlet property="reminderView" destination="ROd-Sm-RbI" id="fFo-zE-Dgg"/>
-                        <segue destination="2xQ-Qz-ViR" kind="show" identifier="showDetailSegue" id="OaN-EZ-DZ1"/>
+                        <segue destination="2xQ-Qz-ViR" kind="show" identifier="showDetailSegue" id="qQ3-CA-m8p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6KS-pZ-vNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -384,22 +384,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iO6-6k-Dj1">
-                                <rect key="frame" x="0.0" y="88" width="375" height="330"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iO6-6k-Dj1">
+                                <rect key="frame" x="0.0" y="173" width="375" height="605"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LIK-2r-iKM">
-                                <rect key="frame" x="16" y="426" width="343" height="30"/>
+                            <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Note here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LIK-2r-iKM">
+                                <rect key="frame" x="0.0" y="93" width="309" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1S-YK-6Fu">
+                                <rect key="frame" x="16" y="131" width="293" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                <color key="textColor" red="0.9321255088" green="0.34722284530000003" blue="0.3040541135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZE-tc-FFm">
+                                <rect key="frame" x="334" y="137" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="info" image="info.png"/>
+                                <connections>
+                                    <action selector="tapSetTime:" destination="2xQ-Qz-ViR" eventType="touchUpInside" id="kC3-lz-cKm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FD6-ZD-dQ6">
+                                <rect key="frame" x="317" y="93" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.9321255088" green="0.34722284530000003" blue="0.3040541135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="tapSaveBtn:" destination="2xQ-Qz-ViR" eventType="touchUpInside" id="Hxh-Xv-UA4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Kp9-pt-TGa"/>
                     </view>
                     <connections>
+                        <outlet property="outputLabel" destination="V1S-YK-6Fu" id="4Ug-hd-7xR"/>
                         <outlet property="reminderMemo" destination="LIK-2r-iKM" id="qAm-A0-mwL"/>
                         <outlet property="reminderPic" destination="iO6-6k-Dj1" id="th5-n8-HIS"/>
                     </connections>
@@ -873,6 +899,7 @@
         <image name="OK btn.png" width="395" height="223"/>
         <image name="Share app.png" width="625" height="300"/>
         <image name="close BTN.png" width="881" height="280"/>
+        <image name="info.png" width="256" height="256"/>
         <image name="library.png" width="294" height="258"/>
         <image name="reminder btn.png" width="1024" height="423"/>
         <image name="time capsule btn.jpg" width="1025" height="425"/>

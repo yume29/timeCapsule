@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2DA1F497E948984F31D7CF69 /* Pods_timeCapsule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD96F6C072B1D45E8F305E93 /* Pods_timeCapsule.framework */; };
+		9007963921F852AF00D364F0 /* RPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9007963821F852AF00D364F0 /* RPicker.swift */; };
+		9007963B21F862CC00D364F0 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 9007963A21F862CC00D364F0 /* info.png */; };
 		901E00D521EEB9F700E84A04 /* Icon-App-76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00C521EEB9F600E84A04 /* Icon-App-76x76@2x.png */; };
 		901E00D621EEB9F700E84A04 /* Icon-App-29x29@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00C621EEB9F600E84A04 /* Icon-App-29x29@1x.png */; };
 		901E00D721EEB9F700E84A04 /* Icon-App-40x40@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901E00C721EEB9F600E84A04 /* Icon-App-40x40@1x.png */; };
@@ -65,6 +67,8 @@
 /* Begin PBXFileReference section */
 		09A04D3B044E90FBFAD9859A /* Pods-timeCapsule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timeCapsule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-timeCapsule/Pods-timeCapsule.debug.xcconfig"; sourceTree = "<group>"; };
 		3C0B120D01526C5E116AFC90 /* Pods-timeCapsule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timeCapsule.release.xcconfig"; path = "Pods/Target Support Files/Pods-timeCapsule/Pods-timeCapsule.release.xcconfig"; sourceTree = "<group>"; };
+		9007963821F852AF00D364F0 /* RPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPicker.swift; sourceTree = "<group>"; };
+		9007963A21F862CC00D364F0 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		901E00C521EEB9F600E84A04 /* Icon-App-76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-76x76@2x.png"; sourceTree = "<group>"; };
 		901E00C621EEB9F600E84A04 /* Icon-App-29x29@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@1x.png"; sourceTree = "<group>"; };
 		901E00C721EEB9F600E84A04 /* Icon-App-40x40@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-40x40@1x.png"; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 				90D7C0E321DEE2EA006C6C09 /* stopBtn.png */,
 				90AE467F21CA082500731FF1 /* navcolor.jpg */,
 				90D7C0E121DEE278006C6C09 /* microphone2.png */,
+				9007963A21F862CC00D364F0 /* info.png */,
 				90C95C4A21E638DB0088094D /* Closed cap.png */,
 				90D7C0DF21DEE271006C6C09 /* microphone.png */,
 				9053E3B121E4850B00D62739 /* videocam.png */,
@@ -205,6 +210,7 @@
 				9093F77C21F54C1A00DC9AB0 /* voiceTableViewCell.xib */,
 				905FB17121F072D80036D7CF /* reminderCollectionViewCell.swift */,
 				905FB17221F072D80036D7CF /* reminderCollectionViewCell.xib */,
+				9007963821F852AF00D364F0 /* RPicker.swift */,
 				9051F18221C375FC006BA062 /* Assets.xcassets */,
 				9051F18421C375FC006BA062 /* LaunchScreen.storyboard */,
 				9051F18721C375FC006BA062 /* Info.plist */,
@@ -321,6 +327,7 @@
 				901E00D521EEB9F700E84A04 /* Icon-App-76x76@2x.png in Resources */,
 				901E00DD21EEB9F700E84A04 /* Icon-App-20x20@2x.png in Resources */,
 				901E00E421EEB9F700E84A04 /* Icon-App-29x29@2x.png in Resources */,
+				9007963B21F862CC00D364F0 /* info.png in Resources */,
 				90D7C0E621DEE2F3006C6C09 /* playBtn.png in Resources */,
 				901E00E221EEB9F700E84A04 /* Icon-App-76x76@1x.png in Resources */,
 				901E00E121EEB9F700E84A04 /* Icon-App-60x60@2x.png in Resources */,
@@ -424,6 +431,7 @@
 				9051F17B21C375F4006BA062 /* ViewController.swift in Sources */,
 				9088D9B921E46F50008C0099 /* videoSaveViewController.swift in Sources */,
 				9051F17921C375F4006BA062 /* AppDelegate.swift in Sources */,
+				9007963921F852AF00D364F0 /* RPicker.swift in Sources */,
 				90263E7421C77C2000D01110 /* picsSaveViewController.swift in Sources */,
 				905FB17321F072D80036D7CF /* reminderCollectionViewCell.swift in Sources */,
 				90C95C4F21E64AA50088094D /* DateSetViewController.swift in Sources */,
@@ -581,6 +589,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SY3XS8KF4H;
 				INFOPLIST_FILE = timeCapsule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -600,6 +609,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SY3XS8KF4H;
 				INFOPLIST_FILE = timeCapsule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
