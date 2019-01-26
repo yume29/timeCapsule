@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailViewController: UIViewController,UITextFieldDelegate,UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var reminderPic: UIImageView!
     @IBOutlet weak var reminderMemo: UITextField!
     @IBOutlet weak var outputLabel: UILabel!
     
     // CollectionViewControllerから渡されるデータ
-    var receiveImage:UIImage?
-//    var receiveMemo:String?
+    var receiveImage:String?
+    var receiveMemo:String?
     var receiveCellNum:Int?
+    var selectedDate:Date?
+    var reminderList:[Reminder] = []
     
     //アラートに表示するDatePicker
     var setTime:UIDatePicker = UIDatePicker()
@@ -26,8 +29,10 @@ class DetailViewController: UIViewController,UITextFieldDelegate,UINavigationCon
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(hex: "f9f1d3")
-        reminderPic.image = receiveImage
-//        reminderMemo.text = receiveMemo
+        
+        //        TODO: ここ調整する
+        //        reminderPic.image = receiveImage
+        //        reminderMemo.text = receiveMemo
         
         // キーボードにDoneをつける
         navigationController?.delegate = self
@@ -49,7 +54,7 @@ class DetailViewController: UIViewController,UITextFieldDelegate,UINavigationCon
     @objc func closeKeybord(_ sender:Any){
         self.view.endEditing(true)
     }
-//    通知時間を設定する関数
+    //    通知時間を設定する関数
     @IBAction func tapSetTime(_ sender: UIButton) {
         print("picker表示")
         
@@ -58,25 +63,50 @@ class DetailViewController: UIViewController,UITextFieldDelegate,UINavigationCon
             self.outputLabel.text = "通知: \(selectedDate.dateString())"
         })
     }
-
+    
     @IBAction func tapSaveBtn(_ sender: UIButton) {
-
-            // 表示の大元がViewControllerかNavigationControllerかで戻る場所を判断する
-            if self.presentingViewController is UINavigationController {
-                //  表示の大元がNavigationControllerの場合
-                let nc = self.presentingViewController as! UINavigationController
-                
-                // 前画面のViewControllerを取得
-                let vc = nc.topViewController as! reminderViewController
-                
-                // 前画面のViewControllerの値を更新
-                vc.newMemo = self.reminderMemo.text
-                vc.indexNum = self.receiveCellNum
-                
-                // 今の画面を消して、前画面を表示させる&amp;amp;amp;lt;span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start"&amp;amp;amp;gt;&amp;amp;amp;lt;/span&amp;amp;amp;gt;
-                self.dismiss(animated: true, completion: nil)
-
+        let currentDate: Date = Date()
+        // TODO: 入力値をreminderに登録する
+        do{
+            //Realmをつかえるようにする
+            let realm = try Realm()
+            //保存する対象のインスタンスを作成
+            let reminder = Reminder()
+            //値を設定する
+            reminder.image = receiveImage!
+            reminder.memo = reminderMemo.text!
+            reminder.alerm  = selectedDate!
+            reminder.created = currentDate
+            
+            //保存処理
+            try!  realm.write {
+                realm.add(reminder)
+                //更新
+                fetchReminders()
+                print("書き込んだよ", reminder)
             }
+        }catch{
+            print("失敗したよ")
+        }
+        func fetchReminders() {
+            // TODO: todo一覧を取得する
+            do{
+                let realm = try Realm()
+                //todoListに保存されているものすべて取得
+                var results = realm.objects(Reminder.self)
+                //createを基準にソート
+                results = results.sorted(byKeyPath: "created", ascending: false)
+                //todoListに格納
+                reminderList = Array(results)
+//                //テーブルビューを更新
+//                todoTable.reloadData()
+                print("読み込んだよ")
+            }catch{
+                print("失敗したよ")
+            }
+        }
+
+            
     }
 }
 extension Date {
@@ -96,5 +126,6 @@ extension Date {
         
         return Calendar.current.date(byAdding: dateComponents, to: self)!
     }
+    
 }
 

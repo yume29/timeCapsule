@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/ichinoseyume/Documents/iOS20181106_48batch/timeCapsule/timeCapsule/reminder.swift">
+   </FileRef>
+   <FileRef
       location = "group:timeCapsule.xcodeproj">
    </FileRef>
    <FileRef

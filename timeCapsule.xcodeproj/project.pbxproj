@@ -31,7 +31,6 @@
 		9051F17921C375F4006BA062 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051F17821C375F4006BA062 /* AppDelegate.swift */; };
 		9051F17B21C375F4006BA062 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051F17A21C375F4006BA062 /* ViewController.swift */; };
 		9051F17E21C375F4006BA062 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9051F17C21C375F4006BA062 /* Main.storyboard */; };
-		9051F18121C375F4006BA062 /* timeCapsule.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9051F17F21C375F4006BA062 /* timeCapsule.xcdatamodeld */; };
 		9051F18321C375FC006BA062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9051F18221C375FC006BA062 /* Assets.xcassets */; };
 		9051F18621C375FC006BA062 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9051F18421C375FC006BA062 /* LaunchScreen.storyboard */; };
 		9051F18E21C3778B006BA062 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051F18D21C3778B006BA062 /* UIColorHex.swift */; };
@@ -49,6 +48,7 @@
 		9093F78021F6F4B000DC9AB0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9093F77F21F6F4B000DC9AB0 /* DetailViewController.swift */; };
 		90AE467C21C8DDD500731FF1 /* photoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AE467B21C8DDD500731FF1 /* photoViewController.swift */; };
 		90AE468021CA082600731FF1 /* navcolor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 90AE467F21CA082500731FF1 /* navcolor.jpg */; };
+		90C811AF21FAF061004E4601 /* reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C811AE21FAF061004E4601 /* reminder.swift */; };
 		90C95C4721E622370088094D /* letterSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C95C4621E622370088094D /* letterSaveViewController.swift */; };
 		90C95C4921E633F70088094D /* passwordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C95C4821E633F70088094D /* passwordViewController.swift */; };
 		90C95C4B21E638DB0088094D /* Closed cap.png in Resources */ = {isa = PBXBuildFile; fileRef = 90C95C4A21E638DB0088094D /* Closed cap.png */; };
@@ -91,7 +91,6 @@
 		9051F17821C375F4006BA062 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9051F17A21C375F4006BA062 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9051F17D21C375F4006BA062 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9051F18021C375F4006BA062 /* timeCapsule.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = timeCapsule.xcdatamodel; sourceTree = "<group>"; };
 		9051F18221C375FC006BA062 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9051F18521C375FC006BA062 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9051F18721C375FC006BA062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +109,7 @@
 		9093F77F21F6F4B000DC9AB0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		90AE467B21C8DDD500731FF1 /* photoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoViewController.swift; sourceTree = "<group>"; };
 		90AE467F21CA082500731FF1 /* navcolor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = navcolor.jpg; sourceTree = "<group>"; };
+		90C811AE21FAF061004E4601 /* reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = reminder.swift; path = /Users/ichinoseyume/Documents/iOS20181106_48batch/timeCapsule/timeCapsule/reminder.swift; sourceTree = "<absolute>"; };
 		90C95C4621E622370088094D /* letterSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = letterSaveViewController.swift; sourceTree = "<group>"; };
 		90C95C4821E633F70088094D /* passwordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passwordViewController.swift; sourceTree = "<group>"; };
 		90C95C4A21E638DB0088094D /* Closed cap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Closed cap.png"; sourceTree = "<group>"; };
@@ -207,6 +207,7 @@
 				90D700E621EDD24800EE33A6 /* reminderViewController.swift */,
 				9051F17C21C375F4006BA062 /* Main.storyboard */,
 				9093F77B21F54C1A00DC9AB0 /* voiceTableViewCell.swift */,
+				90C811AE21FAF061004E4601 /* reminder.swift */,
 				9093F77C21F54C1A00DC9AB0 /* voiceTableViewCell.xib */,
 				905FB17121F072D80036D7CF /* reminderCollectionViewCell.swift */,
 				905FB17221F072D80036D7CF /* reminderCollectionViewCell.xib */,
@@ -216,7 +217,6 @@
 				9051F18721C375FC006BA062 /* Info.plist */,
 				90C95C4621E622370088094D /* letterSaveViewController.swift */,
 				90C95C4821E633F70088094D /* passwordViewController.swift */,
-				9051F17F21C375F4006BA062 /* timeCapsule.xcdatamodeld */,
 				9088D9B821E46F50008C0099 /* videoSaveViewController.swift */,
 				9051F18D21C3778B006BA062 /* UIColorHex.swift */,
 				9053E3B321E4935900D62739 /* videoViewController.swift */,
@@ -395,7 +395,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-timeCapsule/Pods-timeCapsule-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ExpandableTableViewController/ExpandableTableViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
 				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
 			);
@@ -403,7 +406,10 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandableTableViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
 			);
@@ -423,7 +429,7 @@
 				9053E3B421E4935900D62739 /* videoViewController.swift in Sources */,
 				90C95C4921E633F70088094D /* passwordViewController.swift in Sources */,
 				90D700E721EDD24900EE33A6 /* reminderViewController.swift in Sources */,
-				9051F18121C375F4006BA062 /* timeCapsule.xcdatamodeld in Sources */,
+				90C811AF21FAF061004E4601 /* reminder.swift in Sources */,
 				90AE467C21C8DDD500731FF1 /* photoViewController.swift in Sources */,
 				9051F18E21C3778B006BA062 /* UIColorHex.swift in Sources */,
 				9093F78021F6F4B000DC9AB0 /* DetailViewController.swift in Sources */,
@@ -643,19 +649,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		9051F17F21C375F4006BA062 /* timeCapsule.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9051F18021C375F4006BA062 /* timeCapsule.xcdatamodel */,
-			);
-			currentVersion = 9051F18021C375F4006BA062 /* timeCapsule.xcdatamodel */;
-			path = timeCapsule.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 9051F16D21C375F4006BA062 /* Project object */;
 }

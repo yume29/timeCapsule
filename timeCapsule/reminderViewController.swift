@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class reminderViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     //UICollectionViewDataSource,UICollectionViewDelegate{
@@ -17,15 +18,16 @@ class reminderViewController: UIViewController,UIImagePickerControllerDelegate,U
     
     
     let userdefaults = UserDefaults.standard
-    var picList:[UIImage?] = []
-    var textList:[UIImage: String] = [:]
-    var reminderList:[[String:String]] = []
+    var reminderList:[[String: String]] = []
     var screenWidth:CGFloat!
     var screenHeight:CGFloat!
     var scrollView:UIScrollView!
-    var selectedImage:UIImage?
-    //    var selectedMemo:String?
+    var selectedImage:String?
+    var selectedMemo:String?
     var selectedCellNum:Int?
+    var path:String?
+    var imageName:String?
+    
     var indexNum:Int?
     var newMemo:String?
     
@@ -35,6 +37,11 @@ class reminderViewController: UIViewController,UIImagePickerControllerDelegate,U
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         reminderView.backgroundColor = UIColor(hex: "f9f1d3")
+        
+        //ユーザーデフォルト
+        userdefaults.register(defaults: ["imgNum": 0])
+        fetchReminders()
+        
         
     }
     
@@ -59,70 +66,42 @@ class reminderViewController: UIViewController,UIImagePickerControllerDelegate,U
     }
     //        撮影ボタンが押されたら、発動するメゾット
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+        //        画像情報を取得
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        
-        
-        //        TODO: ここをどうしていいかわからない
-        
-        //登録する名前の生成
-        let imageName:String = fileName()
-        //Pathを生成
-        let path = "file://" + fileInDocumentsDirectory(filename: imageName)
-        //保存する画像
-        let saveimage = image
+        let imageName = fileName()
+        let path = getDocumentsURL()
+        print("URL",path)
         print("保存する画像",image)
-        //    配列に撮った写真を追加
         
-        var list[path] = ""
-        //アプリのDocumentフォルダに画像を保存
-        saveImage(image: saveimage, path: path)
+        //配列に撮った写真を追加
+        let list = ["fileName": imageName, "memo": ""]
+        reminderList.append(list)
+        
+        let strUrl = path.absoluteString
+        //ファイルに画像を保存
+        saveImage(image: image, path: strUrl!)
         
         //アルバムに保存（カメラロール）
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         
-        //        撮影用の画面を閉じる
+        //   撮影用の画面を閉じる
         dismiss(animated: true, completion: nil)
         self.reminderView.reloadData()
         
     }
     
-}
-//UIScrollViewの拡張
-extension UIScrollView {
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.endEditing(true)
-        print("touchesBegan")
-    }
-}
-extension reminderViewController: UICollectionViewDelegate{
-    // Cell が選択された場合
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-        
-        print("セルが選択されました")
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! reminderCollectionViewCell
-        // [indexPath.row] から画像名を探し、UImage を設定
-        selectedImage = picList[indexPath.row]
-        //            selectedMemo = cell.memoField.text
-        selectedCellNum = indexPath.row
-        // SubViewController へ遷移するために Segue を呼び出す
-        performSegue(withIdentifier: "showDetailSegue",sender: nil)
-    }
-    
-    // 画面遷移先のViewControllerを取得し、データを渡す
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetailSegue" {
-            let vc = segue.destination as! DetailViewController
-            vc.receiveImage = selectedImage
-            //vc.receiveMemo = selectedMemo
-            vc.receiveCellNum = selectedCellNum
-        }
-    }
     //画像保存時のPathを生成.ドキュメントフォルダまでのPathを取得.
     func getDocumentsURL()->NSURL{
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         return documentsURL! as NSURL
+    }
+    //    画像をロードする関数
+    func loadImageFromPath(path: String) -> UIImage? {
+        let image = UIImage(contentsOfFile: path)
+        if image == nil {
+            print("missing image at: \(path)")
+        }
+        return image
     }
     //Pathの最後に保存する画像の名前を追加
     func fileInDocumentsDirectory(filename: String)->String{
@@ -153,20 +132,75 @@ extension reminderViewController: UICollectionViewDelegate{
         return "reminder\(imgNum)"
     }
     
+
+//    DB上のデータをおろしてくるメゾット
+    func fetchReminders() {
+        // TODO: todo一覧を取得する
+        do{
+            let realm = try Realm()
+            //todoListに保存されているものすべて取得
+            var results = realm.objects(Reminder.self)
+            //createを基準にソート
+            results = results.sorted(byKeyPath: "created", ascending: false)
+            //todoListに格納
+//            reminderList = Array(results)
+            //テーブルビューを更新
+            reminderView.reloadData()
+            print("読み込んだよ")
+        }catch{
+            print("失敗したよ")
+        }
+    }
+}
+//UIScrollViewの拡張
+extension UIScrollView {
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endEditing(true)
+        print("touchesBegan")
+    }
+}
+extension reminderViewController: UICollectionViewDelegate{
+    // Cell が選択された場合
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        
+        print("セルが選択されました")
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! reminderCollectionViewCell
+        // [indexPath.row] から画像名を探し、UImage を設定
+        
+        selectedImage = reminderList[indexPath.row]["path"]
+        selectedMemo = reminderList[indexPath.row]["memo"]
+        selectedCellNum = indexPath.row
+        // SubViewController へ遷移するために Segue を呼び出す
+        performSegue(withIdentifier: "showDetailSegue",sender: nil)
+    }
+    
+    // 画面遷移先のViewControllerを取得し、データを渡す
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetailSegue" {
+            let vc = segue.destination as! DetailViewController
+            vc.receiveImage = selectedImage
+            //vc.receiveMemo = selectedMemo
+            vc.receiveCellNum = selectedCellNum
+        }
+    }
+    
 }
 
 //セルの個数の反映
 extension reminderViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.picList.count
+        return self.reminderList.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! reminderCollectionViewCell
         //セルのプロパティ設定
         cell.memoField.text = "MEMO"
-        cell.reminderPic.image = picList[indexPath.row]
+        let imagePath = getDocumentsURL().absoluteString
+        let loadImage = loadImageFromPath(path: imagePath)
+        cell.reminderPic.image = loadImage
         cell.reminderPic.innerShadow()
         //        丸角にする
         cell.layer.cornerRadius = 10

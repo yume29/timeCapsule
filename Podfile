@@ -6,8 +6,8 @@ target 'timeCapsule' do
   use_frameworks!
 
 pod 'YPImagePicker'
-
-
+pod "ExpandableTableViewController"
+pod 'RealmSwift'
   # Pods for timeCapsule
 
 end

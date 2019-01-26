@@ -1,24 +1,38 @@
 PODS:
+  - ExpandableTableViewController (2.1)
   - PryntTrimmerView (3.0.0)
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
+  - RealmSwift (3.13.1):
+    - Realm (= 3.13.1)
   - SteviaLayout (4.4.0)
   - YPImagePicker (3.5.2):
     - PryntTrimmerView (~> 3.0.0)
     - SteviaLayout (~> 4.4.0)
 
 DEPENDENCIES:
+  - ExpandableTableViewController
+  - RealmSwift
   - YPImagePicker
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - ExpandableTableViewController
     - PryntTrimmerView
+    - Realm
+    - RealmSwift
     - SteviaLayout
     - YPImagePicker
 
 SPEC CHECKSUMS:
+  ExpandableTableViewController: 7a97b8cf60f044b588255a01176cafa5ce2b7438
   PryntTrimmerView: 53ac64053c7ce63cb3e27f54090f52da0734891d
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
+  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   SteviaLayout: dd74d1abd127bbf0ce346ac9430441684fe427d0
   YPImagePicker: 26d5bf7bfe1cffd1c5eedea3ac60422b314e2a42
 
-PODFILE CHECKSUM: 205b11753b38ba3e9a36b2128c7ee3bc95546898
+PODFILE CHECKSUM: 2fcd27dd45d41d1b36bc3a2a12827777d402348a
 
 COCOAPODS: 1.5.3
