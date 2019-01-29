@@ -15,7 +15,6 @@ UITableViewDelegate,UITableViewDataSource{
     
     
     //    使う部品の宣言
-    
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var recordBtnShadow: UIView!
     @IBOutlet weak var okBtn: UIButton!
@@ -32,11 +31,18 @@ UITableViewDelegate,UITableViewDataSource{
     var timer: Timer?
     var recordSound:[String] = []
     
+    //セルの高さを設定
+//    var cellHeight = 44.0
+    var tappedCell:Int?
+    var toggle = true
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        
+   
         view.backgroundColor = UIColor(hex: "f9f1d3")
         recordButton.setBackgroundImage(UIImage(named: "microphone.png"), for: .normal)
         //ShadowViewの準備
@@ -95,7 +101,6 @@ UITableViewDelegate,UITableViewDataSource{
             isRecording = false
             self.soundTableView.reloadData()
             //プレーヤーに音声をセット
-            
             print("取り出すとき",recordSound)
             player = try! AVAudioPlayer(contentsOf: getURL(file: recordSound[0]))
             
@@ -106,45 +111,6 @@ UITableViewDelegate,UITableViewDataSource{
         }
     }
     
-    ////    再生のボタンが押されたとき、停止ボタンが押されたとき
-    //    @IBAction func play(){
-    //
-    //        if !isPlaying {
-    //            print("memo:再生false",isPlaying)
-    //
-    //            //スライダー.音楽ファイルの長さと同期.
-    //            soundSlider.maximumValue = Float(player.duration)
-    //
-    //            player.play()
-    //            self.timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(voiceSaveViewController.timerUpdate), userInfo: nil, repeats: true)
-    //            //再生中モードにする
-    //            isPlaying = true
-    //
-    //            playBtn.setBackgroundImage(UIImage(named: "stopBtn.png"),for: .normal)
-    //            recordButton.isEnabled = false
-    //
-    //        }else{
-    //            player.currentTime = TimeInterval(currentTimer)
-    //            player.stop()
-    //            isPlaying = false
-    //            playBtn.setBackgroundImage(UIImage(named: "playBtn.png"), for: .normal)
-    //            recordButton.isEnabled = true
-    //
-    //        }
-    //    }
-    
-    //    再生終了時に発生する関数
-    //    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-    //        player.stop()
-    //        isPlaying = false
-    //        playBtn.setBackgroundImage(UIImage(named: "playBtn.png"), for: .normal)
-    //        recordButton.isEnabled = true
-    //    }
-    
-    //    スライダーが動かされたときに呼ばれる
-    //    @IBAction func valueChanged(_ sender: UISlider) {
-    //        player.currentTime = TimeInterval(sender.value)
-    //    }
     //    音声のURLを取得する
     func getURL(file:String) -> URL{
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -153,26 +119,22 @@ UITableViewDelegate,UITableViewDataSource{
         print(url)
         return url
     }
-    //スライダーのつまみを自動で動かす
-    //    @objc func timerUpdate(){
-    //        print("memo:currentTimer",currentTimer)
-    //        currentTimer = Float(player.currentTime)
-    //        soundSlider.value = currentTimer
-    //    }
     //テーブルセルの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recordSound.count
     }
     //   セルの中身
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        //        let cell = UITableViewCell(style: .default, reuseIdentifier: "voiceTableViewCell")
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! voiceTableViewCell
         
-        cell.nameField!.text = recordSound[indexPath.row]
+        cell.nameLabel!.text = recordSound[indexPath.row]
         cell.playBtn.setBackgroundImage(UIImage(named: "playBtn.png"), for: .normal)
-        cell.subView.isHidden = false
+        cell.playSound = recordSound[indexPath.row]
+        cell.player = try! AVAudioPlayer(contentsOf: getURL(file: recordSound[indexPath.row]))
         
+
+   
+
         return cell
     }
     //    現在時刻をstringで生成する関数
@@ -185,18 +147,42 @@ UITableViewDelegate,UITableViewDataSource{
     
     //    テーブルビューセルのタッチイベント
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("セルが選択されました")
         let cell = tableView.cellForRow(at: indexPath) as! voiceTableViewCell
-        tableView.beginUpdates()
-        cell.expand()
-        print("セルが広がりました")
+        
+        //変数に何行目がを保持
+        tappedCell = indexPath.row
+        
+        // toggle = true 選択されていない
+        toggle = !toggle
+        
+        //選択されたセルを更新
+        self.soundTableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+        
+        //セルが選択状態だったら
+        if toggle {
+            //playerを止める
+            cell.player.stop()
+        }
     }
-    
+        
+
+//選択されたセルの高さを返す
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.row == tappedCell {
+            if toggle {
+                return 44
+            } else {
+                return 100
+            }
+        } else {
+            return 44
+        }
+    }
+
     //    次の画面へ遷移
     @IBAction func tapShowVideo(_ sender: UIButton) {
         print("OKpush")
     }
 }
-
-
 

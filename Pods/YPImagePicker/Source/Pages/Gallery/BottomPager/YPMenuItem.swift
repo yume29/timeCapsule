@@ -29,9 +29,7 @@ final class YPMenuItem: UIView {
     }
     
     func setup() {
-        
-//        backgroundColor = UIColor.green
-//        (red: 249 / 255.0, green: 241 / 255.0, blue: 211 / 255.0, alpha: 1.0)
+        backgroundColor = .clear
         
         sv(
             textLabel,

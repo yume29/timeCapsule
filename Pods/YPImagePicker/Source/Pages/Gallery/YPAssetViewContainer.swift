@@ -23,14 +23,11 @@ class YPAssetViewContainer: UIView {
     public var isShown = true
     
     private let spinner = UIActivityIndicatorView(style: .white)
-    private var shouldCropToSquare = false
+    private var shouldCropToSquare = true
     private var isMultipleSelection = false
 
     override func awakeFromNib() {
-        
         super.awakeFromNib()
-        
-//        self.backgroundColor = UIColor(hex: "f9f1d3")
         
         addSubview(grid)
         grid.frame = frame
