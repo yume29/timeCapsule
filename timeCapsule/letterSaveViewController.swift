@@ -8,7 +8,7 @@
 
 import UIKit
 
-class letterSaveViewController: UIViewController {
+class letterSaveViewController: UIViewController, UITextViewDelegate{
     
     
     
@@ -21,12 +21,23 @@ class letterSaveViewController: UIViewController {
     @IBOutlet weak var okBtn: UIButton!
     
     @IBOutlet weak var okBtnShadow: UIView!
+    
+    @IBOutlet weak var commentNumLabel: UILabel!
+    
+    var willSavePic:[UIImage] = []
+    var willSaveVoice:[String] = []
+    var willSaveVideo:[URL] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor(hex: "f9f1d3")
         letterField.backgroundColor = UIColor.white
         explainField.backgroundColor = UIColor(hex: "f9f1d3")
+        
+        explainField.text = "手紙を登録してください。\n 最大で5000字まで登録できます。"
+        
+        letterField.delegate = self
         
         //FCEFB7
         
@@ -46,6 +57,7 @@ class letterSaveViewController: UIViewController {
         
         //キーボードにDoneをつける
         keyBoardDone()
+
         
     }
 
@@ -64,8 +76,63 @@ class letterSaveViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    //テキストビュー内の文字数をラベルに表示
+    func textViewDidChange(_ textView: UITextView) {
+        let commentNum = letterField.text.count
+        commentNumLabel.text = "\(String(commentNum))/5000"
+        
+        if commentNum > 5000{
+            commentNumLabel.textColor = UIColor.red
+        }else{
+            commentNumLabel.textColor = UIColor.darkGray
+        }
+    }
+    
     @IBAction func showDateSet(_ sender: Any) {
         print("okPush")
+        
+        if letterField.text.count > 5000{
+            
+            //       アラートオブジェクトを作る
+            let alert = UIAlertController(title: "Alert", message :"入力文字数は5000字までです。", preferredStyle: .alert)
+            
+            //        OKボタンが押されたら、myMassageの中に書いた処理を実行するように設定する
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            //        アラートを画面に表示する
+            present(alert,animated: true)
+        }else{
+            let alert = UIAlertController(title: "確認", message :"入力された文章を保存しますか？", preferredStyle: .alert)
+            
+            //OKボタン追加
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{(action: UIAlertAction!) in
+                
+                //アラートが消えるのと画面遷移が重ならないように0.5秒後に画面遷移するようにしてる
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    // 0.5秒後に実行したい処理
+                    self.performSegue(withIdentifier: "showDateSetSegue", sender: nil)
+                }
+            }
+            )
+            
+            let cancelButton = UIAlertAction(title: "CANCEL", style: UIAlertAction.Style.cancel, handler: nil)
+            
+            alert.addAction(okAction)
+            alert.addAction(cancelButton)
+            
+            //アラートを表示する
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    // Segue 準備
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showDateSetSegue") {
+            let vc: DateSetViewController = (segue.destination as? DateSetViewController)!
+            vc.willSavePic = willSavePic
+            vc.willSaveVoice = willSaveVoice
+            vc.willSaveVideo = willSaveVideo
+            vc.willSaveLetter = letterField.text
+            
+        }
     }
     
 }

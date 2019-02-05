@@ -196,17 +196,9 @@ extension reminderViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! reminderCollectionViewCell
-        //セルのプロパティ設定
-//        TODO: loadImageの調整
-        cell.memoField.text = "MEMO"
-        let imagePath = getDocumentsURL().absoluteString
-//        let loadImage = loadImageFromPath(path: imagePath)
-//        cell.reminderPic.image = loadImage
-        cell.reminderPic.innerShadow()
         //        丸角にする
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
-        
         
         return cell
     }

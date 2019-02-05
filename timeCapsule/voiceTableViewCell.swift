@@ -16,8 +16,11 @@ class voiceTableViewCell: UITableViewCell, AVAudioPlayerDelegate{
     @IBOutlet weak var soundSlider: UISlider!
     @IBOutlet weak var playBtnShadow: UIView!
     @IBOutlet weak var playBtn: UIButton!
+    @IBOutlet weak var currentLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
     
     var playSound:String!
+    var playTime:String!
     var player:AVAudioPlayer = AVAudioPlayer()
     var playerItem:AVPlayerItem?
     var isPlaying = false
@@ -39,6 +42,7 @@ class voiceTableViewCell: UITableViewCell, AVAudioPlayerDelegate{
             print("memo:再生false",isPlaying)
             //スライダー.音楽ファイルの長さと同期.
             soundSlider.maximumValue = Float(player.duration)
+            print("音の長さ",player.duration)
             player.volume = 2.0
             player.play()
             self.timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(voiceTableViewCell.timerUpdate), userInfo: nil, repeats: true)

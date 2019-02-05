@@ -13,7 +13,7 @@ class videoViewController: UIViewController {
     
     //前の画面がら画像データを受け取るための、変数。
     
-    var getVideo:UIImage!
+    var getVideo:Any!
     
     
     @IBOutlet weak var getVideoView: UIImageView!
@@ -21,7 +21,7 @@ class videoViewController: UIViewController {
         super.viewDidLoad()
         //imageViewに画像を入れる
         
-        getVideoView.image = getVideo
+        getVideoView.image = getVideo as! UIImage
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

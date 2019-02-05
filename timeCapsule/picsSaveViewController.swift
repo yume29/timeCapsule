@@ -13,13 +13,13 @@ class picsSaveViewController: UIViewController, UIImagePickerControllerDelegate,
     
     var willPostImages:[UIImage] = []
     var postCount:Int?
+
     
     @IBOutlet weak var libraryBtn: UIButton!
     
     @IBOutlet weak var libraryBtnShadow: UIView!
     
     @IBOutlet weak var photoLabel: UITextField!
-    
     
     @IBOutlet weak var countLabel: UILabel!
     
@@ -30,6 +30,7 @@ class picsSaveViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //userdefaults.register(defaults: ["imgNum": 0])
         view.backgroundColor = UIColor(hex: "f9f1d3")
         photoLabel.backgroundColor = UIColor(hex: "f9f1d3")
         photoLabel.borderStyle = UITextField.BorderStyle.none
@@ -42,15 +43,10 @@ class picsSaveViewController: UIViewController, UIImagePickerControllerDelegate,
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "F55050")]
         //左のボタン
         UINavigationBar.appearance().tintColor = UIColor(hex: "F55050")
-        
-        
         //ImagePickerの設定
         YPImagePickerConfig()
         
-        
-        
         //         影表示用のビュー
-
         okBtnShadow.layer.shadowColor = UIColor.black.cgColor
         okBtnShadow.layer.shadowOpacity = 0.5
         okBtnShadow.layer.shadowOffset = CGSize(width: 5, height: 5)
@@ -71,7 +67,7 @@ class picsSaveViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
+        
         postCount = willPostImages.count
         if postCount! == 0{
             countLabel.text = "Select from library"
@@ -79,7 +75,7 @@ class picsSaveViewController: UIViewController, UIImagePickerControllerDelegate,
             countLabel.text = "\(postCount!) pictures selected"
         }
     }
-        
+    
     
     
     @IBAction func openLibrary(_ sender: Any) {
@@ -144,13 +140,10 @@ class picsSaveViewController: UIViewController, UIImagePickerControllerDelegate,
         config.startOnScreen = .library
         //ステータスバーを隠すかどうか
         config.hidesStatusBar = false
-        
         //下のバー（カメラとライブラリの選択）を隠す
         config.hidesBottomBar = true
-        
         //ナビゲーションの右側のボタン「Next」
         config.colors.tintColor = UIColor(hex: "F55050")
-        
         //選べる写真の数
         config.library.maxNumberOfItems = 20
         //上記設定
@@ -163,12 +156,40 @@ class picsSaveViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBAction func tapShoeVice(_ sender: UIButton) {
         print ("OKpush")
+        //       アラートオブジェクトを作る
+        if postCount! == 0{
+            postCount = 0
+        }else{
+//            countLabel.text = "\(postCount!) pictures selected"
+        }
+        let alert = UIAlertController(title: "確認", message :"登録する写真は\(postCount!)枚でよろしいですか", preferredStyle: .alert)
+        
+        //OKボタン追加
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{(action: UIAlertAction!) in
+            
+            //アラートが消えるのと画面遷移が重ならないように0.5秒後に画面遷移するようにしてる
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                // 0.5秒後に実行したい処理
+                self.performSegue(withIdentifier: "showVoiceSegue", sender: nil)
+            }
+        }
+        )
+        
+        let cancelButton = UIAlertAction(title: "CANCEL", style: UIAlertAction.Style.cancel, handler: nil)
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelButton)
+        
+        //アラートを表示する
+        present(alert, animated: true, completion: nil)
+        
     }
-    //self.performSegue(withIdentifier: "showVoiceView", sender: nil)
-    //        let storyboard: UIStoryboard = self.storyboard!
-    //        let voice = storyboard.instantiateViewController(withIdentifier: "showVoiceView")
-    //        self.present(voice, animated: true, completion: nil)
     
+    // 画面遷移先のViewControllerを取得し、データを渡す
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showVoiceSegue" {
+            let vc = segue.destination as! voiceSaveViewController
+            vc.willSavePic = willPostImages
+        }
+    }
 }
-
-

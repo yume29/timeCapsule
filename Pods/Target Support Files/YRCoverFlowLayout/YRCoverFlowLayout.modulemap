@@ -1,0 +1,6 @@
+framework module YRCoverFlowLayout {
+  umbrella header "YRCoverFlowLayout-umbrella.h"
+
+  export *
+  module * { export * }
+}

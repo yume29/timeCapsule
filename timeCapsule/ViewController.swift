@@ -119,5 +119,16 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func openCapsule(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "showFutureSegue", sender: nil)
+    }
+    // 画面遷移先のViewControllerを取得し、データを渡す
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showFutureSegue" {
+            let vc = segue.destination as! futureViewController
+      
+        }
+    }
 }
 

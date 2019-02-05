@@ -14,6 +14,12 @@ class passwordViewController: UIViewController {
     @IBOutlet weak var purupuru: UIView!
     @IBOutlet weak var capsuleImg: UIImageView!
     @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var explainView: UITextView!
+    
+    var selectedDate:String!
+    var password:String!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +27,10 @@ class passwordViewController: UIViewController {
         view.backgroundColor = UIColor(hex: "f9f1d3")
         capsuleImg.backgroundColor = UIColor(hex: "f9f1d3")
         vibrated(vibrated: true, view: purupuru)
-        let password = randomString(length: 10) // 10桁のランダムな英数字を生成
-        passwordLabel.text = "このカプセルのパスワード:\(password)"
+
+        passwordLabel.text = "このカプセルのパスワード:\(password!)"
+        explainView.backgroundColor = UIColor(hex: "f9f1d3")
+        explainView.text = "カプセルを閉じました。\n\(selectedDate!)まで\nこのカプセルは開封できません。\n開封の際に下記のパスワードが必要です。\nアプリは消してもカプセルは保存されます。\nパスワードの再発行はできかねますので、\nスクリーンショットだけでなく、\n紙媒体での保存をおすすめします。"
     
 
         
@@ -56,24 +64,6 @@ class passwordViewController: UIViewController {
             view.layer.removeAnimation(forKey: "VibrateAnimationKey")
         }
     }
-    
-//    パスワードをランダムで生成する処理
-    func randomString(length: Int) -> String {
-        
-        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        let len = UInt32(letters.length)
-        
-        var randomString = ""
-        
-        for _ in 0 ..< length {
-            let rand = arc4random_uniform(len)
-            var nextChar = letters.character(at: Int(rand))
-            randomString += NSString(characters: &nextChar, length: 1) as String
-        }
-        
-        return randomString
-    }
-    
     
     @IBAction func goBackHome(_ sender: UIButton) {
     self.navigationController?.popToViewController((navigationController?.viewControllers[0])!, animated: true)
