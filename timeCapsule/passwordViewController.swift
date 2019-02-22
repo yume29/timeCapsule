@@ -8,27 +8,38 @@
 
 import UIKit
 
-class passwordViewController: UIViewController {
+class passwordViewController: UIViewController , UIScrollViewDelegate{
     
     
     @IBOutlet weak var purupuru: UIView!
     @IBOutlet weak var capsuleImg: UIImageView!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var explainView: UITextView!
+    @IBOutlet weak var completeLabel: UILabel!
+    @IBOutlet weak var homeBtn: UIButton!
     
     var selectedDate:String!
     var password:String!
+    var scrollView:UIScrollView!
+    
+    // Screenの高さ
+    var screenHeight:CGFloat!
+    // Screenの幅
+    var screenWidth:CGFloat!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView = UIScrollView()
+        scrollView.delegate = self
 
         view.backgroundColor = UIColor(hex: "f9f1d3")
         capsuleImg.backgroundColor = UIColor(hex: "f9f1d3")
         vibrated(vibrated: true, view: purupuru)
 
-        passwordLabel.text = "このカプセルのパスワード:\(password!)"
+        passwordLabel.text = "Password:\(password!)"
         explainView.backgroundColor = UIColor(hex: "f9f1d3")
         explainView.text = "カプセルを閉じました。\n\(selectedDate!)まで\nこのカプセルは開封できません。\n開封の際に下記のパスワードが必要です。\nアプリは消してもカプセルは保存されます。\nパスワードの再発行はできかねますので、\nスクリーンショットだけでなく、\n紙媒体での保存をおすすめします。"
     
@@ -42,6 +53,26 @@ class passwordViewController: UIViewController {
         shadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
         shadowView.layer.shadowRadius = 5
         
+        
+        //スクリーンのサイズ取得
+        screenWidth = UIScreen.main.bounds.size.width
+        screenHeight = UIScreen.main.bounds.size.height
+        
+        // UIScrollViewのサイズと位置を設定
+        scrollView.frame = CGRect(x:0,y:0,width: screenWidth, height: screenHeight)
+        
+        //スクロールビューにtextFieldを追加する処
+        scrollView.addSubview(completeLabel)
+        scrollView.addSubview(purupuru)
+        scrollView.addSubview(passwordLabel)
+        scrollView.addSubview(homeBtn)
+        scrollView.addSubview(explainView)
+        
+        // UIScrollViewのコンテンツのサイズを指定
+        scrollView.contentSize = CGSize(width: screenWidth, height: screenHeight)
+        
+        // ビューに追加
+        self.view.addSubview(scrollView)
     }
 //    揺れる角度を決める処理
     func degreesToRadians(degrees: Float) -> Float {

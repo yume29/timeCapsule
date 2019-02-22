@@ -9,26 +9,33 @@
 import UIKit
 import YPImagePicker
 
-class picsSaveViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class picsSaveViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate{
     
     var willPostImages:[UIImage] = []
     var postCount:Int?
+    var scrollView:UIScrollView!
 
-    
+    @IBOutlet weak var stepLabel: UILabel!
+
     @IBOutlet weak var libraryBtn: UIButton!
-    
     @IBOutlet weak var libraryBtnShadow: UIView!
-    
     @IBOutlet weak var photoLabel: UITextField!
-    
     @IBOutlet weak var countLabel: UILabel!
-    
     @IBOutlet weak var okBtn: UIButton!
-    
     @IBOutlet weak var okBtnShadow: UIView!
+    
+    // Screenの高さ
+    var screenHeight:CGFloat!
+    // Screenの幅
+    var screenWidth:CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView = UIScrollView()
+        
+        scrollView.delegate = self
+        
         
         //userdefaults.register(defaults: ["imgNum": 0])
         view.backgroundColor = UIColor(hex: "f9f1d3")
@@ -64,6 +71,25 @@ class picsSaveViewController: UIViewController, UIImagePickerControllerDelegate,
         okBtn.layer.cornerRadius = 10
         okBtn.layer.masksToBounds = true
         
+        //スクリーンのサイズ取得
+        screenWidth = UIScreen.main.bounds.size.width
+        screenHeight = UIScreen.main.bounds.size.height
+        
+        // UIScrollViewのサイズと位置を設定
+        scrollView.frame = CGRect(x:0,y:0,width: screenWidth, height: screenHeight)
+        
+        //スクロールビューにtextFieldを追加する処
+        scrollView.addSubview(stepLabel)
+        scrollView.addSubview(photoLabel)
+        scrollView.addSubview(countLabel)
+        scrollView.addSubview(libraryBtnShadow)
+        scrollView.addSubview(okBtnShadow)
+        
+        // UIScrollViewのコンテンツのサイズを指定
+        scrollView.contentSize = CGSize(width: screenWidth, height: screenHeight)
+        
+        // ビューに追加
+        self.view.addSubview(scrollView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -128,6 +154,7 @@ class picsSaveViewController: UIViewController, UIImagePickerControllerDelegate,
         var config = YPImagePickerConfiguration()
         //保存するときに正方形じゃない
         config.onlySquareImagesFromCamera = false
+        config.library.onlySquare = false
         //フィルターなし
         config.showsFilters = true
         //カメラモードオフ

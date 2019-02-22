@@ -13,17 +13,20 @@ import AVFoundation
 
 
 class voiceSaveViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDelegate,
-UITableViewDelegate,UITableViewDataSource{
+UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegate{
     
     
     
     //    使う部品の宣言
+    
+    @IBOutlet weak var stepLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var recordBtnShadow: UIView!
     @IBOutlet weak var okBtn: UIButton!
     @IBOutlet weak var okBtnShadow: UIView!
     @IBOutlet weak var soundTableView: UITableView!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var explaunLabel: UILabel!
     //    使う変数の宣言
     //    falseはレコードオフの状態
     var audioRecorder: AVAudioRecorder!
@@ -44,10 +47,18 @@ UITableViewDelegate,UITableViewDataSource{
     var startTime:NSDate?
     var willSavePic:[UIImage] = []
     
+    var scrollView:UIScrollView!
+    // Screenの高さ
+    var screenHeight:CGFloat!
+    // Screenの幅
+    var screenWidth:CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(willSavePic)
+        scrollView = UIScrollView()
+        
+        scrollView.delegate = self
         
         userdefaults.register(defaults: ["Num": 0])
         view.backgroundColor = UIColor(hex: "f9f1d3")
@@ -66,6 +77,27 @@ UITableViewDelegate,UITableViewDataSource{
         //        丸角にする
         okBtn.layer.cornerRadius = 10
         okBtn.layer.masksToBounds = true
+        
+        //スクリーンのサイズ取得
+        screenWidth = UIScreen.main.bounds.size.width
+        screenHeight = UIScreen.main.bounds.size.height
+        
+        // UIScrollViewのサイズと位置を設定
+        scrollView.frame = CGRect(x:0,y:0,width: screenWidth, height: screenHeight)
+        
+        //スクロールビューにtextFieldを追加する処
+        scrollView.addSubview(stepLabel)
+        scrollView.addSubview(timeLabel)
+        scrollView.addSubview(soundTableView)
+        scrollView.addSubview(explaunLabel)
+        scrollView.addSubview(okBtnShadow)
+        scrollView.addSubview(recordBtnShadow)
+        
+        // UIScrollViewのコンテンツのサイズを指定
+        scrollView.contentSize = CGSize(width: screenWidth, height: screenHeight)
+        
+        // ビューに追加
+        self.view.addSubview(scrollView)
     }
     //    録音ボタンが押されたときに呼ばれる
     

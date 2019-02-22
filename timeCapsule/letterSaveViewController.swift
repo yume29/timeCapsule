@@ -8,7 +8,7 @@
 
 import UIKit
 
-class letterSaveViewController: UIViewController, UITextViewDelegate{
+class letterSaveViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate{
     
     
     
@@ -27,15 +27,28 @@ class letterSaveViewController: UIViewController, UITextViewDelegate{
     var willSavePic:[UIImage] = []
     var willSaveVoice:[String] = []
     var willSaveVideo:[URL] = []
+    var scrollView:UIScrollView!
+    
+    // Screenの高さ
+    var screenHeight:CGFloat!
+    // Screenの幅
+    var screenWidth:CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView = UIScrollView()
+
+        scrollView.delegate = self
+        letterField.delegate = self
+        
+        
 
         view.backgroundColor = UIColor(hex: "f9f1d3")
         letterField.backgroundColor = UIColor.white
         explainField.backgroundColor = UIColor(hex: "f9f1d3")
         
-        explainField.text = "手紙を登録してください。\n 最大で5000字まで登録できます。"
+
         
         letterField.delegate = self
         
@@ -55,6 +68,29 @@ class letterSaveViewController: UIViewController, UITextViewDelegate{
         letterField.layer.cornerRadius = 10
         letterField.layer.masksToBounds = true
         
+        //スクリーンのサイズ取得
+        screenWidth = UIScreen.main.bounds.size.width
+        screenHeight = UIScreen.main.bounds.size.height
+        
+        // UIScrollViewのサイズと位置を設定
+        scrollView.frame = CGRect(x:0,y:0,width: screenWidth, height: screenHeight)
+        
+        //スクロールビューにtextFieldを追加する処
+        scrollView.addSubview(stepLabel)
+        scrollView.addSubview(commentNumLabel)
+        scrollView.addSubview(explainField)
+        scrollView.addSubview(letterField)
+        scrollView.addSubview(okBtnShadow)
+        scrollView.addSubview(okBtnShadow)
+        
+        // UIScrollViewのコンテンツのサイズを指定
+        scrollView.contentSize = CGSize(width: screenWidth, height: screenHeight*1.4)
+        
+        // ビューに追加
+        self.view.addSubview(scrollView)
+        
+        
+        explainField.text = "手紙を登録してください。\n 最大で5000字まで登録できます。"
         //キーボードにDoneをつける
         keyBoardDone()
 
@@ -134,5 +170,7 @@ class letterSaveViewController: UIViewController, UITextViewDelegate{
             
         }
     }
+    
+
     
 }

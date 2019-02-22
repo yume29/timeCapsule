@@ -17,13 +17,13 @@ import FirebaseCore
 
 
 
-class DateSetViewController: UIViewController {
+class DateSetViewController: UIViewController,UIScrollViewDelegate {
     
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var closeBtnShadow: UIView!
     @IBOutlet weak var openDatePicker: UIDatePicker!
     @IBOutlet weak var explainview: UITextView!
-    
+    @IBOutlet weak var explainLabel: UILabel!
     
     
     //設定日
@@ -44,9 +44,19 @@ class DateSetViewController: UIViewController {
     //ストレージへの参照を入れるための変数。
     var storageRef:StorageReference!
     
+    var scrollView:UIScrollView!
+    // Screenの高さ
+    var screenHeight:CGFloat!
+    // Screenの幅
+    var screenWidth:CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(hex: "f9f1d3")
+        
+        scrollView = UIScrollView()
+        
+        scrollView.delegate = self
         
         userdefaults.register(defaults: ["imgNum": 0])
         print("写真",willSavePic)
@@ -76,6 +86,25 @@ class DateSetViewController: UIViewController {
          db = Firestore.firestore()
         //ストレージへの参照
         storageRef = storage.reference(forURL:"gs://time-capsule-ca57c.appspot.com/")
+        
+        //スクリーンのサイズ取得
+        screenWidth = UIScreen.main.bounds.size.width
+        screenHeight = UIScreen.main.bounds.size.height
+        
+        // UIScrollViewのサイズと位置を設定
+        scrollView.frame = CGRect(x:0,y:0,width: screenWidth, height: screenHeight)
+        
+        //スクロールビューにtextFieldを追加する処
+        scrollView.addSubview(explainLabel)
+        scrollView.addSubview(openDatePicker)
+        scrollView.addSubview(explainview)
+        scrollView.addSubview(closeBtnShadow)
+        
+        // UIScrollViewのコンテンツのサイズを指定
+        scrollView.contentSize = CGSize(width: screenWidth, height: screenHeight)
+        
+        // ビューに追加
+        self.view.addSubview(scrollView)
     }
     
     //    今日の日付を取得し、5年後までをdatepickerで指定。
@@ -229,8 +258,8 @@ extension DateSetViewController{
 //            saveURL(data:["video":videoName])
         //保存する画像をNSData型へ
         let path = url[index]
-        let meta = StorageMetadata()
-            meta.contentType = "video/quicktime"
+//        let meta = StorageMetadata()
+//            meta.contentType = "video/m4p"
         let uploadTask = reference.putFile(from: path, metadata: nil){ (metadata, error) in
             
             
@@ -264,8 +293,8 @@ extension DateSetViewController{
 //            saveURL(data:["voice":voiceName])
             //保存する画像をNSData型へ
             let path = getURL(file: voiceName)
-//            let meta = StorageMetadata()
-//            meta.contentType = "video/quicktime"
+            let meta = StorageMetadata()
+            meta.contentType = "video/quicktime"
             let uploadTask = reference.putFile(from: path, metadata: nil){ (metadata, error) in
                 
                 guard let metadata = metadata else {

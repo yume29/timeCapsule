@@ -14,6 +14,7 @@ import Photos
 
 class videoCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var videoName: UILabel!
     var videoURL:String!
     var player:AVPlayer!
 }

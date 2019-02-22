@@ -9,13 +9,14 @@
 import UIKit
 import YPImagePicker
 
-class videoSaveViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class videoSaveViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate{
     
     var willSavePic:[UIImage] = []
     var willSaveVoice:[String] = []
     var willPostVideo:[URL] = []
     var IntPlayTime:[Double] = []
     var postCount:Int?
+    var scrollView:UIScrollView!
     
     @IBOutlet weak var stepLabel: UILabel!
     
@@ -31,8 +32,17 @@ class videoSaveViewController: UIViewController,UIImagePickerControllerDelegate,
     
     @IBOutlet weak var countLabel: UILabel!
     
+    // Screenの高さ
+    var screenHeight:CGFloat!
+    // Screenの幅
+    var screenWidth:CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView = UIScrollView()
+        
+        scrollView.delegate = self
         
         view.backgroundColor = UIColor(hex: "f9f1d3")
         videoLabel.backgroundColor = UIColor(hex: "f9f1d3")
@@ -69,6 +79,26 @@ class videoSaveViewController: UIViewController,UIImagePickerControllerDelegate,
         
         okBtn.layer.cornerRadius = 10
         okBtn.layer.masksToBounds = true
+        
+        //スクリーンのサイズ取得
+        screenWidth = UIScreen.main.bounds.size.width
+        screenHeight = UIScreen.main.bounds.size.height
+        
+        // UIScrollViewのサイズと位置を設定
+        scrollView.frame = CGRect(x:0,y:0,width: screenWidth, height: screenHeight)
+        
+        //スクロールビューにtextFieldを追加する処
+        scrollView.addSubview(stepLabel)
+        scrollView.addSubview(videoLabel)
+        scrollView.addSubview(videoBtnShadow)
+        scrollView.addSubview(countLabel)
+        scrollView.addSubview(okBtnShadow)
+        
+        // UIScrollViewのコンテンツのサイズを指定
+        scrollView.contentSize = CGSize(width: screenWidth, height: screenHeight)
+        
+        // ビューに追加
+        self.view.addSubview(scrollView)
     }
     
     override func viewWillAppear(_ animated: Bool) {

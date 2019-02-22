@@ -10,7 +10,7 @@ import UIKit
 import Accounts
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
     //    リマインダーのボタン
     @IBOutlet weak var reminderBtn: UIButton!
@@ -26,23 +26,35 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var shareBtnShadow: UIView!
     
+    //スクロールビュー
+    var scrollView:UIScrollView!
+    
+    
     //    パスワード関係
     
     @IBOutlet weak var passwordField: UITextField!
-    
     @IBOutlet weak var passwordShadow: UIView!
-    
     @IBOutlet weak var openBtn: UIButton!
-    
     @IBOutlet weak var okBtnShadow: UIView!
     @IBOutlet weak var passwordLabel: UILabel!
+    
+    // Screenの高さ
+    var screenHeight:CGFloat!
+    // Screenの幅
+    var screenWidth:CGFloat!
+    
+    var keyboard = CGRect()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(hex: "f9f1d3")
         
-        //FCEFB7
+        // UIScrollViewインスタンス生成
+        scrollView = UIScrollView()
+        
+        scrollView.delegate = self
+        passwordField.delegate = self
         
         //         影表示用のビュー
         //REMINDERボタン
@@ -82,8 +94,30 @@ class ViewController: UIViewController {
         timeCapsuleBtn.layer.masksToBounds = true
         openBtn.layer.cornerRadius = 7
         openBtn.layer.masksToBounds = true
+
+        //スクリーンのサイズ取得
+        screenWidth = UIScreen.main.bounds.size.width
+        screenHeight = UIScreen.main.bounds.size.height
+        
+        // UIScrollViewのサイズと位置を設定
+        scrollView.frame = CGRect(x:0,y:0,width: screenWidth, height: screenHeight)
+        
+        //スクロールビューにtextFieldを追加する処
+        scrollView.addSubview(reminderBtnShadow)
+        scrollView.addSubview(timeCapsuleBtnShadow)
+        scrollView.addSubview(passwordField)
+        scrollView.addSubview(passwordLabel)
+        scrollView.addSubview(okBtnShadow)
+        scrollView.addSubview(shareBtnShadow)
+        
+        // UIScrollViewのコンテンツのサイズを指定
+        scrollView.contentSize = CGSize(width: screenWidth, height: screenHeight)
+        
+        // ビューに追加
+        self.view.addSubview(scrollView)
         //キーボードにDoneをつける
         keyBoardDone()
+
         
     }
 
@@ -116,7 +150,26 @@ class ViewController: UIViewController {
     }
     @objc func closeKeybord(_ sender:Any){
         self.view.endEditing(true)
+    }    //キーボードが表示された時に呼ばれる
+    @objc func keyboardWillShow(notification: NSNotification) {
+        let insertHeight:CGFloat = 250
+        scrollView.contentSize = CGSize(width: screenWidth, height: screenHeight + insertHeight)
+        let offset = CGPoint(x: 0, y: insertHeight)
+        scrollView.setContentOffset(offset, animated: true)
+        print("スクリーンのサイズをキーボードの高さ分伸ばし伸ばした分動かす。")
     }
+    //キーボードが閉じる時に呼ばれる
+    @objc func keyboardWillHide(notification: NSNotification) {
+        scrollView.contentSize = CGSize(width: screenWidth, height: screenHeight)
+        print("元の大きさへ")
+    }
+    
+    //リターンキーを押した時に、
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     
     
     @IBAction func openCapsule(_ sender: UIButton) {
